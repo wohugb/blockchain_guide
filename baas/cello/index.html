@@ -1,0 +1,2618 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="区块链技术是金融科技（Fintech）领域的一项重要技术创新。">
+      
+      
+      
+        <meta name="author" content="yeasy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>使用超级账本 Cello 搭建区块链服务 - 区块链技术指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="区块链技术指南" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                区块链技术指南
+              </span>
+              <span class="md-header-nav__topic">
+                使用超级账本 Cello 搭建区块链服务
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/blockchain_guide" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/blockchain_guide
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../born/README/" title="灵感价值场景" class="md-tabs__link">
+          灵感价值场景
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../distribute_system/README/" title="技术算法" class="md-tabs__link">
+          技术算法
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../bitcoin/README/" title="实现" class="md-tabs__link">
+          实现
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../fabric/intro/" title="Fabric" class="md-tabs__link">
+          Fabric
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../app_dev/intro/" title="区块链" class="md-tabs__link">
+          区块链
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../evaluation/README/" title="性能与评测" class="md-tabs__link">
+          性能与评测
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../appendix/terms/" title="附录" class="md-tabs__link">
+          附录
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    区块链技术指南
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/blockchain_guide" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/blockchain_guide
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../revision/" title="修订记录" class="md-nav__link">
+      修订记录
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../contribute/" title="如何贡献" class="md-nav__link">
+      如何贡献
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      灵感价值场景
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        灵感价值场景
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      区块链思想
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        区块链思想
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../born/README/" title="诞生与概念" class="md-nav__link">
+      诞生与概念
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../born/currency/" title="从数字货币说起" class="md-nav__link">
+      从数字货币说起
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../born/bitcoin/" title="比特币：前所未有的社会学实验" class="md-nav__link">
+      比特币：前所未有的社会学实验
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../born/what/" title="区块链核心概念" class="md-nav__link">
+      区块链核心概念
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../born/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      区块链技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        区块链技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro/README/" title="价值、挑战与展望" class="md-nav__link">
+      价值、挑战与展望
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro/business/" title="商业价值" class="md-nav__link">
+      商业价值
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro/tech/" title="关键技术和挑战" class="md-nav__link">
+      关键技术和挑战
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro/vision/" title="趋势与展望" class="md-nav__link">
+      趋势与展望
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      典型应用场景
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        典型应用场景
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/README/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/trading/" title="金融服务" class="md-nav__link">
+      金融服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/trust/" title="征信和权属管理" class="md-nav__link">
+      征信和权属管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/sharing/" title="资源共享" class="md-nav__link">
+      资源共享
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/capital/" title="投资管理" class="md-nav__link">
+      投资管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/iot/" title="物联网与供应链" class="md-nav__link">
+      物联网与供应链
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/others/" title="其它场景" class="md-nav__link">
+      其它场景
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scenario/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      技术算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        技术算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      分布式系统
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        分布式系统
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/README/" title="核心问题" class="md-nav__link">
+      核心问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/problem/" title="一致性问题" class="md-nav__link">
+      一致性问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/consensus/" title="共识算法" class="md-nav__link">
+      共识算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/flp/" title="FLP 不可能性原理" class="md-nav__link">
+      FLP 不可能性原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/cap/" title="CAP 原理" class="md-nav__link">
+      CAP 原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/acid/" title="ACID 原则" class="md-nav__link">
+      ACID 原则
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/paxos/" title="Paxos 与 Raft" class="md-nav__link">
+      Paxos 与 Raft
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/bft/" title="拜占庭问题与算法" class="md-nav__link">
+      拜占庭问题与算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/availability/" title="可靠性指标" class="md-nav__link">
+      可靠性指标
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../distribute_system/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      密码学与安全技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        密码学与安全技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/README/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/hash/" title="Hash 算法与摘要" class="md-nav__link">
+      Hash 算法与摘要
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/algorithm/" title="加解密算法" class="md-nav__link">
+      加解密算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/signature/" title="数字签名" class="md-nav__link">
+      数字签名
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/cert/" title="数字证书" class="md-nav__link">
+      数字证书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/pki/" title="PKI 体系" class="md-nav__link">
+      PKI 体系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/merkle_trie/" title="Merkle 树" class="md-nav__link">
+      Merkle 树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/homoencryption/" title="同态加密" class="md-nav__link">
+      同态加密
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/others/" title="其它问题" class="md-nav__link">
+      其它问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crypto/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      实现
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        实现
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      比特币项目
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        比特币项目
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/README/" title="思想诞生的摇篮" class="md-nav__link">
+      思想诞生的摇篮
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/introductin/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/design/" title="原理和设计" class="md-nav__link">
+      原理和设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/mining/" title="挖矿" class="md-nav__link">
+      挖矿
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/tools/" title="工具" class="md-nav__link">
+      工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/consensus/" title="共识机制" class="md-nav__link">
+      共识机制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/lightning_network/" title="闪电网络" class="md-nav__link">
+      闪电网络
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/sidechain/" title="侧链" class="md-nav__link">
+      侧链
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Ethereum（以太坊）
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Ethereum（以太坊）
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum/README/" title="技术落地的实验" class="md-nav__link">
+      技术落地的实验
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum/intro/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum/install/" title="安装" class="md-nav__link">
+      安装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum/tools/" title="相关工具" class="md-nav__link">
+      相关工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum/design/" title="协议设计" class="md-nav__link">
+      协议设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum/smartContract_example01/" title="智能合约示例一" class="md-nav__link">
+      智能合约示例一
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Hyperledger（超级账本）
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Hyperledger（超级账本）
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hyperledger/README/" title="商用分布式账本" class="md-nav__link">
+      商用分布式账本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hyperledger/history/" title="诞生与发展" class="md-nav__link">
+      诞生与发展
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hyperledger/community/" title="社区组织" class="md-nav__link">
+      社区组织
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hyperledger/top_project/" title="五大顶级项目" class="md-nav__link">
+      五大顶级项目
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hyperledger/contribute/" title="开发和提交代码" class="md-nav__link">
+      开发和提交代码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hyperledger/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Fabric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Fabric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      部署与管理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        部署与管理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/intro/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/1.0/" title="使用 1.0 版本" class="md-nav__link">
+      使用 1.0 版本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-3" type="checkbox" id="nav-7-1-3">
+    
+    <label class="md-nav__link" for="nav-7-1-3">
+      使用 v0.6
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-3">
+        使用 v0.6
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/v0.6/README/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/v0.6/install/" title="安装部署" class="md-nav__link">
+      安装部署
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/v0.6/usage/" title="使用 chaincode" class="md-nav__link">
+      使用 chaincode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/v0.6/membersrcv-usage/" title="权限管理" class="md-nav__link">
+      权限管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/v0.6/hyperledger-py/" title="Python 客户端" class="md-nav__link">
+      Python 客户端
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-2" type="checkbox" id="nav-7-2">
+    
+    <label class="md-nav__link" for="nav-7-2">
+      架构与设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-2">
+        架构与设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric_design/intro/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric_design/design/" title="架构设计" class="md-nav__link">
+      架构设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric_design/protocol/" title="消息协议" class="md-nav__link">
+      消息协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fabric_design/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      区块链
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        区块链
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      应用开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        应用开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/intro/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/chaincode/" title="链上代码工作原理" class="md-nav__link">
+      链上代码工作原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/chaincode_example01/" title="示例一：信息公证" class="md-nav__link">
+      示例一：信息公证
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/chaincode_example02/" title="示例二：交易资产" class="md-nav__link">
+      示例二：交易资产
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/chaincode_example03/" title="示例三：数字货币发行与管理" class="md-nav__link">
+      示例三：数字货币发行与管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/chaincode_example04/" title="示例四：学历认证" class="md-nav__link">
+      示例四：学历认证
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/chaincode_example05/" title="示例五：社区能源共享" class="md-nav__link">
+      示例五：社区能源共享
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app_dev/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" checked>
+    
+    <label class="md-nav__link" for="nav-8-2">
+      服务平台设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        服务平台设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../README/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bluemix/" title="IBM Bluemix 云区块链服务" class="md-nav__link">
+      IBM Bluemix 云区块链服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../azure/" title="微软 Azure 云区块链服务" class="md-nav__link">
+      微软 Azure 云区块链服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        使用超级账本 Cello 搭建区块链服务
+      </label>
+    
+    <a href="./" title="使用超级账本 Cello 搭建区块链服务" class="md-nav__link md-nav__link--active">
+      使用超级账本 Cello 搭建区块链服务
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cello" title="使用超级账本 Cello 搭建区块链服务" class="md-nav__link">
+    使用超级账本 Cello 搭建区块链服务
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="基本架构和特性" class="md-nav__link">
+    基本架构和特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="环境准备" class="md-nav__link">
+    环境准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_1" title="下载 Cello 源码" class="md-nav__link">
+    下载 Cello 源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker" title="配置 Worker 节点" class="md-nav__link">
+    配置 Worker 节点
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="安装和配置 Docker 服务" class="md-nav__link">
+    安装和配置 Docker 服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" title="下载 Docker 镜像" class="md-nav__link">
+    下载 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="防火墙配置" class="md-nav__link">
+    防火墙配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#master" title="配置 Master 节点" class="md-nav__link">
+    配置 Master 节点
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_2" title="下载 Docker 镜像" class="md-nav__link">
+    下载 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_2" title="安装 Cello 服务" class="md-nav__link">
+    安装 Cello 服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_3" title="管理 Cello 服务" class="md-nav__link">
+    管理 Cello 服务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_4" title="使用 Cello 管理区块链" class="md-nav__link">
+    使用 Cello 管理区块链
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosts" title="Hosts 页面" class="md-nav__link">
+    Hosts 页面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-chains" title="Active Chains 页面" class="md-nav__link">
+    Active Chains 页面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_5" title="基于 Cello 进行功能扩展" class="md-nav__link">
+    基于 Cello 进行功能扩展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../summary/" title="本章小结" class="md-nav__link">
+      本章小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      性能与评测
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        性能与评测
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../evaluation/README/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../evaluation/intro/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../evaluation/hyperledger/" title="Hyperledger Fabric v0.6" class="md-nav__link">
+      Hyperledger Fabric v0.6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../evaluation/summary/" title="小结" class="md-nav__link">
+      小结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      附录
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        附录
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/terms/" title="术语" class="md-nav__link">
+      术语
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/faq/" title="常见问题" class="md-nav__link">
+      常见问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/companies/" title="相关组织" class="md-nav__link">
+      相关组织
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/grpc/" title="ProtoBuf 与 gRPC" class="md-nav__link">
+      ProtoBuf 与 gRPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/resources/" title="参考资源链接" class="md-nav__link">
+      参考资源链接
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cello" title="使用超级账本 Cello 搭建区块链服务" class="md-nav__link">
+    使用超级账本 Cello 搭建区块链服务
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="基本架构和特性" class="md-nav__link">
+    基本架构和特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="环境准备" class="md-nav__link">
+    环境准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_1" title="下载 Cello 源码" class="md-nav__link">
+    下载 Cello 源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker" title="配置 Worker 节点" class="md-nav__link">
+    配置 Worker 节点
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="安装和配置 Docker 服务" class="md-nav__link">
+    安装和配置 Docker 服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" title="下载 Docker 镜像" class="md-nav__link">
+    下载 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="防火墙配置" class="md-nav__link">
+    防火墙配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#master" title="配置 Master 节点" class="md-nav__link">
+    配置 Master 节点
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_2" title="下载 Docker 镜像" class="md-nav__link">
+    下载 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_2" title="安装 Cello 服务" class="md-nav__link">
+    安装 Cello 服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_3" title="管理 Cello 服务" class="md-nav__link">
+    管理 Cello 服务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_4" title="使用 Cello 管理区块链" class="md-nav__link">
+    使用 Cello 管理区块链
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosts" title="Hosts 页面" class="md-nav__link">
+    Hosts 页面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-chains" title="Active Chains 页面" class="md-nav__link">
+    Active Chains 页面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cello_5" title="基于 Cello 进行功能扩展" class="md-nav__link">
+    基于 Cello 进行功能扩展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>使用超级账本 Cello 搭建区块链服务</h1>
+                
+                <h2 id="cello">使用超级账本 Cello 搭建区块链服务<a class="headerlink" href="#cello" title="Permanent link">&para;</a></h2>
+<p>从前面的讲解中可以看到，区块链服务平台能够有效加速对区块链技术的应用，解决企业和开发者进行手动运营管理的负担。但是这些方案都是商业用途，并且只能在线使用。</p>
+<p><img alt="Cello 典型应用场景" src="../_images/cello.png" /></p>
+<p>超级账本的 Cello 项目为本地搭建区块链服务管理平台提供了开源的解决方案，可以实现在多种类型的物理资源上实现区块链网络的生命周期管理。</p>
+<p>正如 Cello 的名字所蕴意，它就像一把精巧的大提琴，以区块链为琴弦，可以奏出更加动人的乐章。</p>
+<h3 id="_1">基本架构和特性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Cello 项目由笔者领导的 IBM 技术团队于 2017 年 1 月贡献到超级账本社区，主要基于 Python 和 Javascript 语言编写。该项目的定位为区块链管理平台，支持部署、运行时管理和数据分析等功能，可以实现一套完整的 BaaS 系统的快速搭建。其基本架构如下图所示。</p>
+<p><img alt="Cello 基本架构" src="../_images/cello_arch.png" /></p>
+<p>在实现区块链环境快速部署的同时，Cello 也提供了不少对区块链平台进行运行时管理的特性，这些特性总结如下。</p>
+<ul>
+<li>管理区块链的全生命周期，包括创建、配置、使用、健康检查、删除等。</li>
+<li>支持多种基础架构作为底层资源池，包括裸机、虚拟机、容器云（Docker、Swarm、Kubernetes）等。</li>
+<li>支持多种区块链平台及自定义配置（目前以支持超级账本 Fabric 为主）。</li>
+<li>支持监控和分析功能，实现对区块链网络和智能合约的运行状况分析。</li>
+<li>提供可插拔的框架设计，包括区块链平台、资源调度、监控、驱动代理等都很容易引入第三方实现。</li>
+</ul>
+<p>下面具体介绍如何以 Docker 主机为资源池，用 Cello 快速搭建一个区块链服务平台。</p>
+<h3 id="_2">环境准备<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Cello 采用了典型的主从（Master-Worker）架构。用户可以自行准备一个 Master 物理节点和若干个 Worker 节点。</p>
+<p>其中，Master 节点负责管理（例如，创建和删除）Worker 节点中的区块链集群，其通过 8080 端口对外提供网页 Dashboard，通过 80 端口对外提供 RESTful API。Worker 节点负责提供区块链集群的物理资源，例如基于 Docker 主机或 Swarm 的方式启动多个集群，作为提供给用户可选的多个区块链网络环境。</p>
+<p>下图中展示了一个典型的 Master-Worker 部署拓扑。每个节点默认为 Linux（如 Ubuntu 16.04）服务器或虚拟机。</p>
+<p><img alt="Cello 部署拓扑示例" src="../_images/cello_deployment_topo.png" /></p>
+<p>为了支持区块链网络，Worker 和 Master 节点需要配备足够的物理资源。例如，如果希望在一个 Worker 节点上能够启动至少 10 个区块链集群，则建议节点配置至少为 8 CPU、16G 内存、100G 硬盘容量。</p>
+<h3 id="cello_1">下载 Cello 源码<a class="headerlink" href="#cello_1" title="Permanent link">&para;</a></h3>
+<p>Cello 代码的官方仓库在社区的 gerrit 上，并实时同步到 Github 仓库中，读者可以从任一仓库中获取代码。例如通过如下命令从官方仓库下载 Cello 源码。</p>
+<div class="codehilite"><pre><span></span>$ git clone http://gerrit.hyperledger.org/r/cello <span class="o">&amp;&amp;</span> <span class="nb">cd</span> cello
+</pre></div>
+
+<h3 id="worker">配置 Worker 节点<a class="headerlink" href="#worker" title="Permanent link">&para;</a></h3>
+<h4 id="docker">安装和配置 Docker 服务<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h4>
+<p>首先安装 Docker，推荐使用 1.12 或者更新的版本。可通过如下命令快速安装 Docker。</p>
+<p><div class="codehilite"><pre><span></span>$ curl -fsSL https://get.docker.com/ <span class="p">|</span> sh
+</pre></div>
+安装成功后，修改 Docker 服务配置。对于 Ubuntu 16.04，更新 <code>/lib/systemd/system/docker.service</code> 文件如下。</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">DOCKER_OPTS</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$DOCKER_OPTS</span><span class="s2"> -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --api-cors-header=&#39;*&#39; --default-ulimit=nofile=8192:16384 --default-ulimit=nproc=8192:16384&quot;</span>
+<span class="nv">EnvironmentFile</span><span class="o">=</span>-/etc/default/docker
+<span class="nv">ExecStart</span><span class="o">=</span>
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/dockerd -H fd:// <span class="nv">$DOCKER_OPTS</span>
+</pre></div>
+
+<p>修改后，需要通过如下命令重启 Docker 服务。</p>
+<div class="codehilite"><pre><span></span>$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker.service
+</pre></div>
+
+<h4 id="docker_1">下载 Docker 镜像<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h4>
+<p>对于超级账本 Fabric v1.0 集群所需的镜像，可以使用如下命令进行自动下载。</p>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> scripts/worker_node_setup <span class="o">&amp;&amp;</span> bash download_images.sh
+</pre></div>
+
+<h4 id="_3">防火墙配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>为了确保 Worker 上的容器可以正常访问，通过如下命令确保主机开启 IP 转发。</p>
+<div class="codehilite"><pre><span></span>$ sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+</pre></div>
+
+<p>同时检查主机的 iptables 设置，确保必要的端口被打开（如 2375、7050~10000 等）。</p>
+<h3 id="master">配置 Master 节点<a class="headerlink" href="#master" title="Permanent link">&para;</a></h3>
+<h4 id="docker_2">下载 Docker 镜像<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h4>
+<p>使用如下命令下载运行服务所必要的 Docker 镜像。</p>
+<p>其中，python:3.5 镜像是运行 Cello 核心组件的基础镜像；mongo:3.2 提供了数据库服务；yeasy/nginx:latest 提供了 Nginx 转发功能；mongo-express:0.30 镜像是为了调试数据库，可以选择性安装。</p>
+<div class="codehilite"><pre><span></span>$ docker pull python:3.5 <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> docker pull mongo:3.2 <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> docker pull yeasy/nginx:latest <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> docker pull mongo-express:0.30
+</pre></div>
+
+<h4 id="cello_2">安装 Cello 服务<a class="headerlink" href="#cello_2" title="Permanent link">&para;</a></h4>
+<p>首次运行时，可以通过如下命令对 Master 节点进行快速配置，包括安装 Docker 环境、创建本地数据库目录、安装依赖软件包等。</p>
+<div class="codehilite"><pre><span></span>$ make setup
+</pre></div>
+
+<p>如果安装过程没有提示出现问题，则说明当前环境满足了运行条件。如果出现问题，可通过查看日志信息进行定位。</p>
+<h4 id="cello_3">管理 Cello 服务<a class="headerlink" href="#cello_3" title="Permanent link">&para;</a></h4>
+<p>可以通过运行如下命令来快速启动 Cello 相关的组件服务（包括 dashboard、restserver、watchdog、mongo、nginx 等）。</p>
+<div class="codehilite"><pre><span></span>$ make start
+</pre></div>
+
+<p>类似地，运行 <code>make stop</code> 或 <code>make restart</code> 可以停止或重启全部服务。</p>
+<p>若希望重新部署某个特定服务（如 dashboard），可运行如下命令。</p>
+<div class="codehilite"><pre><span></span>$ make redeploy <span class="nv">service</span><span class="o">=</span>dashboard
+</pre></div>
+
+<p>运行如下命令可以实时查看所有服务的日志信息。</p>
+<div class="codehilite"><pre><span></span>$ make logs
+</pre></div>
+
+<p>若希望查看某个特定服务的日志，可运行如下命令进行过滤，如只查看 watchdog 组件的日志。</p>
+<div class="codehilite"><pre><span></span>$ make log <span class="nv">service</span><span class="o">=</span>watchdog
+</pre></div>
+
+<h3 id="cello_4">使用 Cello 管理区块链<a class="headerlink" href="#cello_4" title="Permanent link">&para;</a></h3>
+<p>Cello 服务启动后，管理员可以通过 Cello 的 Dashboard 页面管理区块链。</p>
+<p>默认情况下，可通过 Master 节点的 8080 端口访问 Dashboard。默认的登录用户名和密码为 <code>admin:pass</code>。</p>
+<p><img alt="Cello Dashboard" src="../_images/cello_dashboard.png" /></p>
+<p>如图，Dashboard 有多个页面，各页面的功能如下。</p>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overview</td>
+<td>展示系统整体状态</td>
+</tr>
+<tr>
+<td>System Status</td>
+<td>展示一些统计信息</td>
+</tr>
+<tr>
+<td>Hosts</td>
+<td>管理所有主机（Worker 节点）</td>
+</tr>
+<tr>
+<td>Active Chains</td>
+<td>管理资源池中的所有链</td>
+</tr>
+<tr>
+<td>Inused Chains</td>
+<td>管理正在被用户占用的链</td>
+</tr>
+<tr>
+<td>Released History</td>
+<td>查看链的释放历史</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hosts">Hosts 页面<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h4>
+<p>在 Hosts 页面，管理员可以管理所有资源池中已存在的主机，或添加新主机。表格中会显示主机的类型、状态、正在运行的区块链数量、区块链数量上限等。所有设定为 non-schedulable (不会自动分配给用户）的主机会用灰色背景标识，如下图所示。</p>
+<p><img alt="Hosts 页面" src="../_images/cello_dashboard_hosts.png" /></p>
+<p>点击一个主机的 Action 下拉菜单，有如下选项可供操作该主机。</p>
+<ul>
+<li>Fillup：将主机运行的区块链数添加至上限。</li>
+<li>Clean：清理主机中所有未被用户占用的链。</li>
+<li>Config：更改主机配置，如名称和链数量上限。</li>
+<li>Reset：重置该主机，只有当该主机没有用户占用的链时可以使用。</li>
+<li>Delete：从资源池中删除该主机。</li>
+</ul>
+<p>点击 Hosts 页面的 Add Host 按钮，可以向资源池中添加主机。需要设定该主机的名称、Daemon URL 地址（例如，Worker 节点的 docker daemon 监听地址和端口）、链数量上限、日志配置、是否启动区块链至数量上限、是否可向用户自动分配，如下图所示。</p>
+<p><img alt="添加主机" src="../_images/cello_dashboard_addhost.png" /></p>
+<h4 id="active-chains">Active Chains 页面<a class="headerlink" href="#active-chains" title="Permanent link">&para;</a></h4>
+<p>Active Chains 页面会显示所有正在运行的链，包括链的名称、类型、状态、健康状况、规模、所属主机等信息。正在被用户占用的链会用灰色背景标识，如下图所示。</p>
+<p><img alt="Active Chains 页面" src="../_images/cello_dashboard_activechains.png" /></p>
+<p>点击一条链的 Actions 下拉菜单，有如下选项可供操作该链。</p>
+<ul>
+<li>Start：如果这条链处于停止状态，则启动。</li>
+<li>Stop：停止运行中的链。</li>
+<li>Restart：重新启动这条链。</li>
+<li>Delete：删除这条链。</li>
+<li>Release：将占用的链释放，随后会被删除。</li>
+</ul>
+<p>点击 Active Chains 页面的 Add Chain 按钮，可以向资源池中添加更多链（如果还有未被占满的主机），如下图所示。</p>
+<p><img alt="添加链" src="../_images/cello_dashboard_addcluster.png" /></p>
+<h3 id="cello_5">基于 Cello 进行功能扩展<a class="headerlink" href="#cello_5" title="Permanent link">&para;</a></h3>
+<p>Cello 已经提供了完整的区块链管理功能，并提供了图形界面和 API。</p>
+<p>用户可以通过向 Cello 的 Master 节点（默认为 80 端口）发送 RESTful API 来申请、释放区块链，或查看区块链相关信息，如其对外开放的接口，可供用户进行远程交互。RESTful API 的说明可在 Cello 的文档中查阅。</p>
+<p>对于区块链服务提供者，可以利用这些 API 为用户呈现友好的区块链申请和操作界面，在 Cello 的基础之上构建和实现更多功能。</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../azure/" title="微软 Azure 云区块链服务" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                微软 Azure 云区块链服务
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../summary/" title="本章小结" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                本章小结
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2017 - 2018 wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
