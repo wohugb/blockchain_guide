@@ -479,6 +479,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         区块链核心概念
@@ -492,48 +494,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="什么是区块链" class="md-nav__link">
-    什么是区块链
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="定义" class="md-nav__link">
     定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="基本原理" class="md-nav__link">
     基本原理
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="分类" class="md-nav__link">
     分类
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" title="误区" class="md-nav__link">
     误区
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,48 +2085,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="什么是区块链" class="md-nav__link">
-    什么是区块链
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="定义" class="md-nav__link">
     定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="基本原理" class="md-nav__link">
     基本原理
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="分类" class="md-nav__link">
     分类
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" title="误区" class="md-nav__link">
     误区
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2154,10 +2134,8 @@
               
                 
                 
-                  <h1>区块链核心概念</h1>
-                
-                <h2 id="_1">什么是区块链<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+                <h1 id="_1">什么是区块链<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>区块链（Blockchain）技术自身仍然在飞速发展中，目前还缺乏统一的规范和标准。</p>
 <p>[wikipedia](https://en.wikipedia.org/wiki/Block_chain_(database) 给出的定义为：</p>
 <blockquote>
@@ -2223,7 +2201,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_3">基本原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">基本原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>区块链的基本原理理解起来并不难。基本概念包括：</p>
 <ul>
 <li>交易（Transaction）：一次操作，导致账本状态的一次改变，如添加一条记录；</li>
@@ -2237,7 +2215,7 @@
 <p>比特币的这种基于算力的共识机制被称为 Proof of Work（PoW）。目前，要让 hash 结果满足一定条件并无已知的启发式算法，只能进行暴力尝试。尝试的次数越多，算出来的概率越大。通过调节对 hash 结果的限制，比特币网络控制约 10 分钟平均算出来一个合法区块。算出来的节点将得到区块中所有交易的管理费和协议固定发放的奖励费（目前是 12.5 比特币，每四年减半）。也即俗称的挖矿。</p>
 <p>很自然会有人问，能否进行恶意操作来破坏整个区块链系统或者获取非法利益。比如不承认别人的结果，拒绝别人的交易等。实际上，因为系统中存在大量的用户，而且用户默认都只承认他看到的最长的链。只要不超过一半（概率意义上越少肯定越难）的用户协商，最终最长的链将很大概率上是合法的链，而且随着时间增加，这个概率会越大。例如，经过 6 个块后，即便有一半的节点联合起来想颠覆被确认的结果，其概率将为 $$\frac{1}{2}^6 = 1.6\%$$，即低于 $$\frac{1}{60}$$ 的可能性。</p>
 <p><em>注：熟悉 <a href="https://git-scm.com">Git</a> 的人，应该会赞叹两者在设计上的异曲同工之妙。</em></p>
-<h3 id="_4">分类<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">分类<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>根据参与者的不同，可以分为公开（Public）链、联盟（Consortium）链和私有（Private）链。</p>
 <p>公开链，顾名思义，任何人都可以参与使用和维护，典型的如比特币区块链，信息是完全公开的。</p>
 <p>如果引入许可机制，包括私有链和联盟链两种。</p>
@@ -2245,7 +2223,7 @@
 <p>联盟链则介于两者之间，由若干组织一起合作维护一条区块链，该区块链的使用必须是有权限的管理，相关信息会得到保护，典型如银联组织。</p>
 <p>目前来看，公开链将会更多的吸引社区和媒体的眼球，但更多的商业价值应该在联盟链和私有链上。</p>
 <p>根据使用目的和场景的不同，又可以分为以数字货币为目的的货币链，以记录产权为目的的产权链，以众筹为目的的众筹链等。</p>
-<h3 id="_5">误区<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_5">误区<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>目前，对区块链的认识还存在不少误区。</p>
 <p>首先，<strong>区块链不是数据库</strong>。虽然区块链也可以用来存储数据，但它要解决的问题是多方的互信问题。单纯从存储数据角度，它的效率可能不高，笔者也不推荐把大量的原始数据放到区块链上。</p>
 <p>其次，<strong>区块链不是要颠覆现有技术</strong>。作为基于多项已有技术而出现的新事物，区块链跟现有技术的关系是一脉相承的，在解决多方合作和可信处理上多走了一步，但并不意味着它将彻底颠覆已有的商业模式。很长一段时间里，区块链的适用场景仍需摸索，跟已有系统必然是合作共存的关系。</p>

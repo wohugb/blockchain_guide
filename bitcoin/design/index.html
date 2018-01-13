@@ -1091,6 +1091,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         原理和设计
@@ -1104,19 +1106,13 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="原理和设计" class="md-nav__link">
-    原理和设计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="概念" class="md-nav__link">
     概念
   </a>
@@ -1156,8 +1152,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_7" title="设计理念" class="md-nav__link">
     设计理念
   </a>
@@ -1183,11 +1179,6 @@
   <a href="#_10" title="共识机制" class="md-nav__link">
     共识机制
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2141,19 +2132,13 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="原理和设计" class="md-nav__link">
-    原理和设计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="概念" class="md-nav__link">
     概念
   </a>
@@ -2193,8 +2178,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_7" title="设计理念" class="md-nav__link">
     设计理念
   </a>
@@ -2227,11 +2212,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
       
       
@@ -2248,9 +2228,7 @@
               
                 
                 
-                  <h1>原理和设计</h1>
-                
-                <h2 id="_1">原理和设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">原理和设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>比特币网络是一个分布式的点对点网络，网络中的矿工通过“挖矿”来完成对交易记录的记账过程，维护网络的正常运行。</p>
 <p>比特币通过区块链网络提供一个公共可见的记账本，用来记录发生过的交易的历史信息。</p>
 <p>每次发生交易，用户需要将新交易记录写到比特币区块链网络中，等网络确认后即可认为交易完成。每个交易包括一些输入和一些输出，未经使用的交易的输出（ Unspent Transaction Outputs，UTXO）可以被新的交易引用作为合法的输入。</p>
@@ -2297,13 +2275,13 @@
 </tbody>
 </table>
 <p>下面分别介绍比特币网络中的重要概念和设计思路。</p>
-<h3 id="_2">概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="_3">账户/地址<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h2 id="_2">概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">账户/地址<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>比特币账户采用了非对称的加密算法，用户自己保留私钥，对他发出的交易进行签名确认，并公开公钥。</p>
 <p>比特币的账户地址其实就是用户公钥经过一系列 hash（HASH160，或先进行 SHA256，然后进行 RIPEMD160）及编码运算后生成的 160 位（20 字节）的字符串。</p>
 <p>一般，也常常对账户地址串进行 Base58Check 编码，并添加前导字节（表明支持哪种脚本）和 4 字节校验字节，以提高可读性和准确性。</p>
 <p><em>注：这里账户并非直接是公钥，而是 hash 后的值，避免公钥过早暴露导致被破解出私钥。</em></p>
-<h4 id="_4">交易<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h3 id="_4">交易<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>交易是完成比特币功能的核心概念，一条交易将可能包括如下信息：</p>
 <ul>
 <li>付款人地址：合法的地址，公钥经过 SHA256 和 RIPEMD160 两次 hash，得到 160 位 hash 串；</li>
@@ -2322,15 +2300,15 @@
 </ul>
 <p>检查都通过，则将交易标记为合法的未确认交易，并在网络内进行广播。</p>
 <p>可以从 blockchain.info 网站查看实时的交易信息。例如一次较新的交易 <a href="https://blockchain.info/tx/0beca08914de596217f098d744e3fb8da68aa5e00dd8f63a3364b451f3f4a70f">0beca08914de596217f098d744e3fb8da68aa5e00dd8f63a3364b451f3f4a70f</a>。</p>
-<h4 id="_5">脚本<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h3 id="_5">脚本<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p><a href="https://en.bitcoin.it/wiki/Script">脚本（Script）</a> 是保障交易完成（主要用于检验交易是否合法）的核心机制，当所依附的交易发生时被触发。通过脚本机制而非写死交易过程，比特币网络实现了一定的可扩展性。比特币脚本语言是一种非图灵完备的语言，类似 <a href="https://en.wikipedia.org/wiki/Forth_programming_language">Forth</a> 语言。</p>
 <p>一般每个交易都会包括两个脚本：输出脚本（scriptPubKey）和认领脚本（scriptSig）。</p>
 <p>输出脚本一般由付款方对交易设置锁定，用来对能动用这笔交易输出（例如，要花费交易的输出）的对象（收款方）进行权限控制，例如限制必须是某个公钥的拥有者才能花费这笔交易。</p>
 <p>认领脚本则用来证明自己可以满足交易输出脚本的锁定条件，即对某个交易的输出（比特币）的拥有权。</p>
 <p>输出脚本目前支持两种类型：</p>
 <ul>
-<li><a href="https://en.bitcoin.it/wiki/Script#Standard_Transaction_to_Bitcoin_address_.28pay-to-pubkey-hash.29">P2PKH</a>：Pay-To-Public-Key-Hash，允许用户将比特币发送到一个或多个典型的比特币地址上（证明拥有该公钥），前导字节一般为 0x00； </li>
-<li>P2SH：Pay-To-Script-Hash，支付者创建一个输出脚本，里边包含另一个脚本（认领脚本）的哈希，一般用于需要多人签名的场景，前导字节一般为 0x05； </li>
+<li><a href="https://en.bitcoin.it/wiki/Script#Standard_Transaction_to_Bitcoin_address_.28pay-to-pubkey-hash.29">P2PKH</a>：Pay-To-Public-Key-Hash，允许用户将比特币发送到一个或多个典型的比特币地址上（证明拥有该公钥），前导字节一般为 0x00；</li>
+<li>P2SH：Pay-To-Script-Hash，支付者创建一个输出脚本，里边包含另一个脚本（认领脚本）的哈希，一般用于需要多人签名的场景，前导字节一般为 0x05；</li>
 </ul>
 <p>以 P2PKH 为例，输出脚本的格式为</p>
 <div class="codehilite"><pre><span></span><span class="n">scriptPubKey</span><span class="o">:</span> <span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="o">&lt;</span><span class="n">pubKeyHash</span><span class="o">&gt;</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span>
@@ -2348,7 +2326,7 @@
 
 <p>读者可以按照栈的过程来进行计算，体会脚本的验证过程。</p>
 <p>引入脚本机制带来了灵活性，但也引入了更多的安全风险。比特币脚本支持的指令集十分简单，基于栈的处理方式，并且非图灵完备，此外还添加了额外的一些限制（大小限制等）。</p>
-<h4 id="_6">区块<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h3 id="_6">区块<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>一个区块将主要包括如下内容：</p>
 <p>4 字节的区块大小信息；</p>
 <p>80 字节的区块头信息：</p>
@@ -2362,22 +2340,22 @@
 </ul>
 <p>交易个数计数器：1~9 字节；</p>
 <p>所有交易的具体内容，可变长。</p>
-<h3 id="_7">设计理念<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<h4 id="_8">如何避免作恶<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h2 id="_7">设计理念<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">如何避免作恶<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>基于经济博弈原理。在一个开放的网络中，无法通过技术手段保证每个人都是合作的。但可以通过经济博弈来让合作者得到利益，让非合作者遭受损失和风险。</p>
 <p>实际上，博弈论早已被广泛应用到众多领域。</p>
 <p>一个经典的例子是两个人来分一个蛋糕，如果都想拿到较大的一块，在没有第三方的前提下，该怎么指定规则才公平？</p>
 <p>最简单的一个方案是负责切蛋糕的人后选。</p>
 <p><em>注：如果推广到 N 个人呢？</em></p>
 <p>比特币网络需要所有试图参与者（矿工）都首先要付出挖矿的代价，进行算力消耗，越想拿到新区块的决定权，意味着抵押的算力越多。一旦失败，这些算力都会被没收掉，成为沉没成本。当网络中存在众多参与者时，个体试图拿到新区块决定权要付出的算力成本是巨大的，意味着进行一次作恶付出的代价已经超过可能带来的好处。</p>
-<h4 id="_9">负反馈调节<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h3 id="_9">负反馈调节<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>比特币网络在设计上，很好的体现了负反馈的控制论基本原理。</p>
 <p>比特币网络中矿工越多，系统就越稳定，比特币价值就越高，但挖到矿的概率会降低。</p>
 <p>反之，网络中矿工减少，会让系统更容易导致被攻击，比特币价值越低，但挖到矿的概率会提高。</p>
 <p>因此，比特币的价格理论上应该稳定在一个合适的值（网络稳定性也会稳定在相应的值），这个价格乘以挖到矿的概率，恰好达到矿工的收益预期。</p>
 <p>从长远角度看，硬件成本是下降的，但每个区块的比特币奖励每隔 4 年减半，最终将在 2140 年达到 2100 万枚，之后将完全依靠交易的服务费来鼓励矿工对网络的维护。</p>
 <p><em>注：比特币最小单位是“聪”，即 $$10^{-8}$$，总“聪”数为 $$2.1E15$$。对于 64 位处理器来说，高精度浮点计数的限制导致单个数值不能超过 $$2^{53} \approx 9E15$$。</em></p>
-<h4 id="_10">共识机制<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h3 id="_10">共识机制<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>传统的共识问题是考虑在一个相对封闭的体系中，存在好节点、坏节点，然后如何达成一致。</p>
 <p>对于比特币网络来说，因为它是开放的，网络质量也是完全无法保证的，导致问题更加复杂，难以依靠传统的一致性算法来实现。</p>
 <p>比特币网络对共识进行了一系列的放宽，同时对参与共识进行了一系列的限制。</p>

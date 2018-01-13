@@ -839,6 +839,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         拜占庭问题与算法
@@ -852,48 +854,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="拜占庭问题与算法" class="md-nav__link">
-    拜占庭问题与算法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="中国将军问题" class="md-nav__link">
     中国将军问题
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="拜占庭问题" class="md-nav__link">
     拜占庭问题
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#byzantine-fault-tolerant" title="Byzantine Fault Tolerant 算法" class="md-nav__link">
     Byzantine Fault Tolerant 算法
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="新的解决思路" class="md-nav__link">
     新的解决思路
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,48 +2085,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="拜占庭问题与算法" class="md-nav__link">
-    拜占庭问题与算法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="中国将军问题" class="md-nav__link">
     中国将军问题
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="拜占庭问题" class="md-nav__link">
     拜占庭问题
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#byzantine-fault-tolerant" title="Byzantine Fault Tolerant 算法" class="md-nav__link">
     Byzantine Fault Tolerant 算法
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="新的解决思路" class="md-nav__link">
     新的解决思路
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2154,13 +2134,11 @@
               
                 
                 
-                  <h1>拜占庭问题与算法</h1>
-                
-                <h2 id="_1">拜占庭问题与算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">拜占庭问题与算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>拜占庭问题更为广泛，讨论的是允许存在少数节点作恶（消息可能被伪造）场景下的一致性达成问题。拜占庭算法讨论的是最坏情况下的保障。</p>
-<h3 id="_2">中国将军问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">中国将军问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>拜占庭将军问题之前，就已经存在中国将军问题：两个将军要通过信使来达成进攻还是撤退的约定，但信使可能迷路或被敌军阻拦（消息丢失或伪造），如何达成一致。根据 FLP 不可能原理，这个问题无解。</p>
-<h3 id="_3">拜占庭问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">拜占庭问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>又叫拜占庭将军（Byzantine Generals Problem）问题，是 Leslie Lamport 1982 年提出用来解释一致性问题的一个虚构模型。拜占庭是古代东罗马帝国的首都，由于地域宽广，守卫边境的多个将军（系统中的多个节点）需要通过信使来传递消息，达成某些一致的决定。但由于将军中可能存在叛徒（系统中节点出错），这些叛徒将努力向不同的将军发送不同的消息，试图会干扰一致性的达成。</p>
 <p>拜占庭问题即为在此情况下，如何让忠诚的将军们能达成行动的一致。</p>
 <p>对于拜占庭问题来说，假如节点总数为 N，叛变将军数为 F，则当 $$N \ge 3F+1$$ 时，问题才有解，即 Byzantine Fault Tolerant (BFT) 算法。</p>
@@ -2173,11 +2151,11 @@
 <p>Leslie Lamport 证明，当叛变者不超过 $$\frac{1}{3}$$ 时，存在有效的算法，不论叛变者如何折腾，忠诚的将军们总能达成一致的结果。如果叛变者过多，则无法保证一定能达到一致性。</p>
 <p>多于 $$\frac{1}{3}$$ 的叛变者时有没有可能有解决方案呢？设想 $$f$$ 个叛变者和 $$g$$ 个忠诚者，叛变者故意使坏，可以给出错误的结果，也可以不响应。某个时候 $$f$$ 个叛变者都不响应，则 $$g$$ 个忠诚者取多数既能得到正确结果。当 $$f$$ 个叛变者都给出一个恶意的提案，并且 $$g$$ 个忠诚者中有 $$f$$ 个离线时，剩下的 $$g - f$$ 个忠诚者此时无法分别是否混入了叛变者，仍然要确保取多数能得到正确结果，因此，$$g - f &gt; f$$，即 $$g &gt; 2f$$，所以系统整体规模要大于 $$3f$$。</p>
 <p>能确保达成一致的拜占庭系统节点数至少为 4，允许出现 1 个坏的节点。</p>
-<h3 id="byzantine-fault-tolerant">Byzantine Fault Tolerant 算法<a class="headerlink" href="#byzantine-fault-tolerant" title="Permanent link">&para;</a></h3>
+<h2 id="byzantine-fault-tolerant">Byzantine Fault Tolerant 算法<a class="headerlink" href="#byzantine-fault-tolerant" title="Permanent link">&para;</a></h2>
 <p>面向拜占庭问题的容错算法，解决的是网络通信可靠，但节点可能故障情况下的一致性达成。</p>
 <p>最早由 Castro 和 Liskov 在 1999 年提出的 Practical Byzantine Fault Tolerant（PBFT）是第一个得到广泛应用的 BFT 算法。只要系统中有 $$\frac{2}{3}$$ 的节点是正常工作的，则可以保证一致性。</p>
 <p>PBFT 算法包括三个阶段来达成共识：Pre-Prepare、Prepare 和 Commit。</p>
-<h3 id="_4">新的解决思路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">新的解决思路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>拜占庭问题之所以难解，在于任何时候系统中都可能存在多个提案（因为提案成本很低），并且要完成最终的一致性确认过程十分困难，容易受干扰。但是一旦确认，即为最终确认。</p>
 <p>比特币的区块链网络在设计时提出了创新的 PoW（Proof of Work） 算法思路。一个是限制一段时间内整个网络中出现提案的个数（增加提案成本），另外一个是放宽对最终一致性确认的需求，约定好大家都确认并沿着已知最长的链进行拓宽。系统的最终确认是概率意义上的存在。这样，即便有人试图恶意破坏，也会付出很大的经济代价（付出超过系统一半的算力）。</p>
 <p>后来的各种 PoX 系列算法，也都是沿着这个思路进行改进，采用经济上的惩罚来制约破坏者。</p>

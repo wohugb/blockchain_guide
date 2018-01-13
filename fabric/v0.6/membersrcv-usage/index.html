@@ -1508,6 +1508,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         权限管理
@@ -1521,62 +1523,51 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="权限管理" class="md-nav__link">
-    权限管理
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="启动集群" class="md-nav__link">
     启动集群
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="用户登陆" class="md-nav__link">
     用户登陆
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode" title="chaincode 部署" class="md-nav__link">
     chaincode 部署
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_1" title="chaincode 调用" class="md-nav__link">
     chaincode 调用
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_2" title="chaincode 查询" class="md-nav__link">
     chaincode 查询
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="区块信息查询" class="md-nav__link">
     区块信息查询
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2110,62 +2101,51 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="权限管理" class="md-nav__link">
-    权限管理
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="启动集群" class="md-nav__link">
     启动集群
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="用户登陆" class="md-nav__link">
     用户登陆
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode" title="chaincode 部署" class="md-nav__link">
     chaincode 部署
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_1" title="chaincode 调用" class="md-nav__link">
     chaincode 调用
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_2" title="chaincode 查询" class="md-nav__link">
     chaincode 查询
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="区块信息查询" class="md-nav__link">
     区块信息查询
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2184,11 +2164,9 @@
               
                 
                 
-                  <h1>权限管理</h1>
-                
-                <h2 id="_1">权限管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">权限管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>权限管理机制是 hyperledger fabric 项目的一大特色。下面给出使用权限管理的一个应用案例。</p>
-<h3 id="_2">启动集群<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">启动集群<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>首先下载相关镜像。</p>
 <div class="codehilite"><pre><span></span>$ docker pull yeasy/hyperledger:latest
 $ docker tag yeasy/hyperledger:latest hyperledger/fabric-baseimage:latest
@@ -2202,7 +2180,7 @@ $ <span class="nb">cd</span> docker-compose-files/hyperledger/0.6/pbft
 $ docker-compose -f <span class="m">4</span>-peers-with-membersrvc.yml up
 </pre></div>
 
-<h3 id="_3">用户登陆<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">用户登陆<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>当启用了权限管理后，首先需要登录，例如以内置账户 jim 账户登录。</p>
 <p>登录 vp0，并执行登录命令。</p>
 <div class="codehilite"><pre><span></span>$ docker <span class="nb">exec</span> -it pbft_vp0_1 bash
@@ -2233,7 +2211,7 @@ Enter password <span class="k">for</span> user <span class="s1">&#39;jim&#39;</s
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="chaincode">chaincode 部署<a class="headerlink" href="#chaincode" title="Permanent link">&para;</a></h3>
+<h2 id="chaincode">chaincode 部署<a class="headerlink" href="#chaincode" title="Permanent link">&para;</a></h2>
 <p>登录之后，chaincode 的部署、调用等操作与之前类似，只是需要通过 -u 选项来指定用户名。</p>
 <p>在 vp0 上执行命令：</p>
 <div class="codehilite"><pre><span></span><span class="c1"># peer chaincode deploy -u jim -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c &#39;{&quot;Function&quot;:&quot;init&quot;, &quot;Args&quot;: [&quot;a&quot;,&quot;100&quot;, &quot;b&quot;, &quot;200&quot;]}&#39;</span>
@@ -2289,7 +2267,7 @@ Query Result: <span class="m">100</span>
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="chaincode_1">chaincode 调用<a class="headerlink" href="#chaincode_1" title="Permanent link">&para;</a></h3>
+<h2 id="chaincode_1">chaincode 调用<a class="headerlink" href="#chaincode_1" title="Permanent link">&para;</a></h2>
 <p>在账户 a、b 之间进行转账 10 元的操作。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># peer chaincode invoke -u jim -n ${CC_ID} -c &#39;{&quot;Function&quot;: &quot;invoke&quot;, &quot;Args&quot;: [&quot;a&quot;, &quot;b&quot;, &quot;10&quot;]}&#39;</span>
 <span class="m">07</span>:29:25.245 <span class="o">[</span>chaincodeCmd<span class="o">]</span> getChaincodeSpecification -&gt; INFO <span class="m">001</span> Local user <span class="s1">&#39;jim&#39;</span> is already logged in. Retrieving login token.
@@ -2331,7 +2309,7 @@ Query Result: <span class="m">100</span>
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="chaincode_2">chaincode 查询<a class="headerlink" href="#chaincode_2" title="Permanent link">&para;</a></h3>
+<h2 id="chaincode_2">chaincode 查询<a class="headerlink" href="#chaincode_2" title="Permanent link">&para;</a></h2>
 <p>查询 a 账户的余额。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># peer chaincode query -u jim -n ${CC_ID} -c &#39;{&quot;Function&quot;: &quot;query&quot;, &quot;Args&quot;: [&quot;a&quot;]}&#39;</span>
 <span class="m">07</span>:29:55.844 <span class="o">[</span>chaincodeCmd<span class="o">]</span> getChaincodeSpecification -&gt; INFO <span class="m">001</span> Local user <span class="s1">&#39;jim&#39;</span> is already logged in. Retrieving login token.
@@ -2374,7 +2352,7 @@ Query Result: <span class="m">90</span>
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="_4">区块信息查询<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">区块信息查询<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>URL：</p>
 <div class="codehilite"><pre><span></span>GET  HOST:7050/chain/blocks/2
 </pre></div>

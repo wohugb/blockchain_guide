@@ -1910,6 +1910,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         Hyperledger Fabric v0.6
@@ -1923,33 +1925,27 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hyperledger-fabric-v06" title="Hyperledger Fabric v0.6 性能评测" class="md-nav__link">
-    Hyperledger Fabric v0.6 性能评测
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" title="环境配置" class="md-nav__link">
     环境配置
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" title="评测指标" class="md-nav__link">
     评测指标
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="结果" class="md-nav__link">
     结果
   </a>
@@ -2043,16 +2039,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="结论" class="md-nav__link">
     结论
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2180,33 +2171,27 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hyperledger-fabric-v06" title="Hyperledger Fabric v0.6 性能评测" class="md-nav__link">
-    Hyperledger Fabric v0.6 性能评测
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" title="环境配置" class="md-nav__link">
     环境配置
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" title="评测指标" class="md-nav__link">
     评测指标
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="结果" class="md-nav__link">
     结果
   </a>
@@ -2300,16 +2285,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="结论" class="md-nav__link">
     结论
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2328,10 +2308,8 @@
               
                 
                 
-                  <h1>Hyperledger Fabric v0.6</h1>
-                
-                <h2 id="hyperledger-fabric-v06">Hyperledger Fabric v0.6 性能评测<a class="headerlink" href="#hyperledger-fabric-v06" title="Permanent link">&para;</a></h2>
-<h3 id="_1">环境配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+                <h1 id="hyperledger-fabric-v06">Hyperledger Fabric v0.6 性能评测<a class="headerlink" href="#hyperledger-fabric-v06" title="Permanent link">&para;</a></h1>
+<h2 id="_1">环境配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2354,12 +2332,12 @@
 </table>
 <p>每个集群启动后等待 10s 以上，待状态稳定。</p>
 <p>仅测试单客户端、单服务端的连接性能情况。</p>
-<h3 id="_2">评测指标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">评测指标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>一般评测系统性能指标包括吞吐量（throughput）和延迟（latency）。对于区块链平台系统来说，实际交易延迟包括客户端到系统延迟（往往经过互联网），再加上系统处理反馈延迟（跟不同 consensus 算法关系很大，跟集群之间互联系统关系也很大）。</p>
 <p>本次测试仅给出大家最为关注的交易吞吐量（tps）。</p>
-<h3 id="_3">结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h4 id="query">query 交易<a class="headerlink" href="#query" title="Permanent link">&para;</a></h4>
-<h5 id="noops">noops<a class="headerlink" href="#noops" title="Permanent link">&para;</a></h5>
+<h2 id="_3">结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="query">query 交易<a class="headerlink" href="#query" title="Permanent link">&para;</a></h3>
+<h4 id="noops">noops<a class="headerlink" href="#noops" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2384,7 +2362,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="pbftclassic">pbft:classic<a class="headerlink" href="#pbftclassic" title="Permanent link">&para;</a></h5>
+<h4 id="pbftclassic">pbft:classic<a class="headerlink" href="#pbftclassic" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2403,7 +2381,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="pbftbatch">pbft:batch<a class="headerlink" href="#pbftbatch" title="Permanent link">&para;</a></h5>
+<h4 id="pbftbatch">pbft:batch<a class="headerlink" href="#pbftbatch" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2438,7 +2416,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="pbftsieve">pbft:sieve<a class="headerlink" href="#pbftsieve" title="Permanent link">&para;</a></h5>
+<h4 id="pbftsieve">pbft:sieve<a class="headerlink" href="#pbftsieve" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2457,8 +2435,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="invoke">invoke 交易<a class="headerlink" href="#invoke" title="Permanent link">&para;</a></h4>
-<h5 id="noops_1">noops<a class="headerlink" href="#noops_1" title="Permanent link">&para;</a></h5>
+<h3 id="invoke">invoke 交易<a class="headerlink" href="#invoke" title="Permanent link">&para;</a></h3>
+<h4 id="noops_1">noops<a class="headerlink" href="#noops_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2483,7 +2461,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="pbftclassic_1">pbft:classic<a class="headerlink" href="#pbftclassic_1" title="Permanent link">&para;</a></h5>
+<h4 id="pbftclassic_1">pbft:classic<a class="headerlink" href="#pbftclassic_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2502,7 +2480,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="pbftbatch_1">pbft:batch<a class="headerlink" href="#pbftbatch_1" title="Permanent link">&para;</a></h5>
+<h4 id="pbftbatch_1">pbft:batch<a class="headerlink" href="#pbftbatch_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2537,7 +2515,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="pbftsieve_1">pbft:sieve<a class="headerlink" href="#pbftsieve_1" title="Permanent link">&para;</a></h5>
+<h4 id="pbftsieve_1">pbft:sieve<a class="headerlink" href="#pbftsieve_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -2557,7 +2535,7 @@
 </tbody>
 </table>
 <p><em>注：sieve 算法目前在所有交易完成后较长时间内并没有取得最终的结果，出现大量类似“vp0_1  | 07:49:26.388 [consensus/obcpbft] main -&gt; WARN 23348 Sieve replica 0 custody expired, complaining: 3kwyMkdCSL4rbajn65v+iYWyJ5aqagXvRR9QU8qezpAZXY4y6uy2MB31SGaAiaSyPMM77TYADdBmAaZveM38zA==”警告信息。</em></p>
-<h3 id="_4">结论<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">结论<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>单客户端连接情况下，tps 基本在 190 ~ 300 范围内。</p>
                 
                   

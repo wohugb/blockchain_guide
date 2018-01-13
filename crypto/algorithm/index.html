@@ -923,6 +923,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         加解密算法
@@ -936,48 +938,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="加解密算法" class="md-nav__link">
-    加解密算法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="算法体系" class="md-nav__link">
     算法体系
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="对称加密" class="md-nav__link">
     对称加密
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="非对称加密" class="md-nav__link">
     非对称加密
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" title="混合加密机制" class="md-nav__link">
     混合加密机制
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,48 +2085,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="加解密算法" class="md-nav__link">
-    加解密算法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="算法体系" class="md-nav__link">
     算法体系
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="对称加密" class="md-nav__link">
     对称加密
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="非对称加密" class="md-nav__link">
     非对称加密
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" title="混合加密机制" class="md-nav__link">
     混合加密机制
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2154,9 +2134,7 @@
               
                 
                 
-                  <h1>加解密算法</h1>
-                
-                <h2 id="_1">加解密算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">加解密算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -2184,13 +2162,13 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_2">算法体系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">算法体系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>现代加密算法的典型组件包括：加解密算法、加密密钥、解密密钥。其中，加解密算法自身是固定不变的，一般是公开可见的；密钥则往往每次不同，并且需要保护起来，一般来说，对同一种算法，密钥长度越长，则加密强度越大。</p>
 <p>加密过程中，通过加密算法和加密密钥，对明文进行加密，获得密文。</p>
 <p>解密过程中，通过解密算法和解密密钥，对密文进行解密，获得明文。</p>
 <p>根据加解密的密钥是否相同，算法可以分为对称加密（symmetric cryptography，又称公共密钥加密，common-key cryptography）和非对称加密(asymmetric cryptography，又称公钥加密，public-key cryptography)。两种模式适用于不同的需求，恰好形成互补，很多时候也可以组合使用，形成混合加密机制。</p>
 <p>并非所有加密算法的强度都可以从数学上进行证明。公认的高强度加密算法是在经过长时间各方面实践论证后，被大家所认可，不代表其不存在漏洞。但任何时候，自行发明加密算法都是一种不太明智的行为。</p>
-<h3 id="_3">对称加密<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">对称加密<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>顾名思义，加解密的密钥是相同的。</p>
 <p>优点是加解密效率高（速度快，空间占用小），加密强度高。</p>
 <p>缺点是参与多方都需要持有密钥，一旦有人泄露则安全性被破坏；另外如何在不安全通道下分发密钥也是个问题。</p>
@@ -2203,7 +2181,7 @@
 </ul>
 <p>适用于大量数据的加解密；不能用于签名场景；需要提前分发密钥。</p>
 <p><em>注：分组加密每次只能处理固定长度的明文，因此过长的内容需要采用一定模式进行加密，《实用密码学》中推荐使用 密文分组链接（Cipher Block Chain，CBC）、计数器（Counter，CTR）模式。</em></p>
-<h3 id="_4">非对称加密<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">非对称加密<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>非对称加密是现代密码学历史上最为伟大的发明，可以很好的解决对称加密需要的提前分发密钥问题。</p>
 <p>顾名思义，加密密钥和解密密钥是不同的，分别称为公钥和私钥。</p>
 <p>公钥一般是公开的，人人可获取的，私钥一般是个人自己持有，不能被他人获取。</p>
@@ -2219,7 +2197,7 @@
 </ul>
 <p>一般适用于签名场景或密钥协商，不适于大量数据的加解密。</p>
 <p>RSA 算法等已被认为不够安全，一般推荐采用椭圆曲线系列算法。</p>
-<h3 id="_5">混合加密机制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_5">混合加密机制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>即先用计算复杂度高的非对称加密协商一个临时的对称加密密钥（会话密钥，一般相对内容来说要短的多），然后双方再通过对称加密对传递的大量数据进行加解密处理。</p>
 <p>典型的场景是现在大家常用的 HTTPS 机制。HTTPS 实际上是利用了 Transport Layer Security/Secure Socket Layer（TLS/SSL）来实现可靠的传输。TLS 为 SSL 的升级版本，目前广泛应用的为 TLS 1.0，对应到 SSL 3.1 版本。</p>
 <p>建立安全连接的具体步骤如下：</p>

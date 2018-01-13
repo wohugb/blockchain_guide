@@ -1595,6 +1595,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         消息协议
@@ -1608,48 +1610,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="消息协议" class="md-nav__link">
-    消息协议
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#discovery" title="Discovery" class="md-nav__link">
     Discovery
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#transaction" title="Transaction" class="md-nav__link">
     Transaction
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#synchronization" title="Synchronization" class="md-nav__link">
     Synchronization
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#consensus" title="Consensus" class="md-nav__link">
     Consensus
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,48 +2085,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="消息协议" class="md-nav__link">
-    消息协议
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#discovery" title="Discovery" class="md-nav__link">
     Discovery
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#transaction" title="Transaction" class="md-nav__link">
     Transaction
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#synchronization" title="Synchronization" class="md-nav__link">
     Synchronization
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#consensus" title="Consensus" class="md-nav__link">
     Consensus
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2154,9 +2134,7 @@
               
                 
                 
-                  <h1>消息协议</h1>
-                
-                <h2 id="_1">消息协议<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">消息协议<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>节点之间通过消息来进行交互，所有消息都由下面的数据结构来实现。</p>
 <div class="codehilite"><pre><span></span><span class="kd">message</span> <span class="nc">Message</span> <span class="p">{</span>
    <span class="kd">enum</span> <span class="n">Type</span> <span class="p">{</span>
@@ -2193,7 +2171,7 @@
 
 <p>消息分为四大类：Discovery（探测）、Transaction（交易）、Synchronization（同步）、Consensus（一致性）。</p>
 <p>不同消息类型，对应到 payload 中数据不同，分为对应的子类消息结构。</p>
-<h3 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">&para;</a></h3>
+<h2 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">&para;</a></h2>
 <p>包括 DISC_HELLO、DISC_GET_PEERS、DISC_PEERS。</p>
 <p>DISC_HELLO 消息结构如下。</p>
 <div class="codehilite"><pre><span></span><span class="kd">message</span> <span class="nc">HelloMessage</span> <span class="p">{</span> <span class="n">PeerEndpoint</span> <span class="na">peerEndpoint</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kt">uint64</span> <span class="na">blockNumber</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;}</span><span class="kd">message</span> <span class="nc">PeerEndpoint</span> <span class="p">{</span> <span class="n">PeerID</span> <span class="na">ID</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kt">string</span> <span class="na">address</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="kd">enum</span> <span class="n">Type</span> <span class="p">{</span> <span class="na">UNDEFINED</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="na">VALIDATOR</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="na">NON_VALIDATOR</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="p">}</span> <span class="n">Type</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="kt">bytes</span> <span class="na">pkiID</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;}</span>
@@ -2204,7 +2182,7 @@
 <p>节点新加入网络时，会向 <code>CORE_PEER_DISCOVERY_ROOTNODE</code> 发送 <code>DISC_HELLO</code> 消息，汇报本节点的信息（id、地址、block 数、类型等），开始探测过程。</p>
 <p>探测后发现 block 数落后对方，则会触发同步过程。</p>
 <p>之后，定期发送 <code>DISC_GET_PEERS</code> 消息，获取新加入的节点信息。收到 <code>DISC_GET_PEERS</code> 消息的节点会通过 <code>DISC_PEERS</code> 消息返回自己知道的节点列表。</p>
-<h3 id="transaction">Transaction<a class="headerlink" href="#transaction" title="Permanent link">&para;</a></h3>
+<h2 id="transaction">Transaction<a class="headerlink" href="#transaction" title="Permanent link">&para;</a></h2>
 <p>包括 Deploy、Invoke、Query。消息结构如下：</p>
 <div class="codehilite"><pre><span></span><span class="kd">message</span> <span class="nc">Transaction</span> <span class="p">{</span> <span class="kd">enum</span> <span class="n">Type</span> <span class="p">{</span> <span class="na">UNDEFINED</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="na">CHAINCODE_DEPLOY</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="na">CHAINCODE_INVOKE</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="na">CHAINCODE_QUERY</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="na">CHAINCODE_TERMINATE</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="p">}</span> <span class="n">Type</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kt">string</span> <span class="na">uuid</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="kt">bytes</span> <span class="na">chaincodeID</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="kt">bytes</span> <span class="na">payloadHash</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 
@@ -2217,14 +2195,14 @@
 <span class="kd">enum</span> <span class="n">ConfidentialityLevel</span> <span class="p">{</span> <span class="na">PUBLIC</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="na">CONFIDENTIAL</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;}</span>
 </pre></div>
 
-<h3 id="synchronization">Synchronization<a class="headerlink" href="#synchronization" title="Permanent link">&para;</a></h3>
+<h2 id="synchronization">Synchronization<a class="headerlink" href="#synchronization" title="Permanent link">&para;</a></h2>
 <p>当节点发现自己 block 落后网络中最新状态，则可以通过发送如下消息（由 consensus 策略决定）来获取对应的返回。</p>
 <ul>
 <li>SYNC_GET_BLOCKS（对应 SYNC_BLOCKS）：获取给定范围内的 block 数据；</li>
 <li>SYNC_STATE_GET_SNAPSHOT（对应 SYNC_STATE_SNAPSHOT）：获取最新的世界观快照；</li>
 <li>SYNC_STATE_GET_DELTAS（对应 SYNC_STATE_DELTAS）：获取某个给定范围内的 block 对应的状态变更。</li>
 </ul>
-<h3 id="consensus">Consensus<a class="headerlink" href="#consensus" title="Permanent link">&para;</a></h3>
+<h2 id="consensus">Consensus<a class="headerlink" href="#consensus" title="Permanent link">&para;</a></h2>
 <p>consensus 组件收到 <code>CHAIN_TRANSACTION</code> 类消息后，将其转换为 <code>CONENSUS</code> 消息，然后向所有的 VP 节点广播。</p>
 <p>收到 <code>CONSENSUS</code> 消息的节点会按照预定的 consensus 算法进行处理。</p>
                 

@@ -1355,6 +1355,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         开发和提交代码
@@ -1368,33 +1370,27 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="开发和提交代码" class="md-nav__link">
-    开发和提交代码
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="安装环境" class="md-nav__link">
     安装环境
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="获取代码" class="md-nav__link">
     获取代码
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="编译和测试" class="md-nav__link">
     编译和测试
   </a>
@@ -1455,23 +1451,18 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_8" title="提交代码" class="md-nav__link">
     提交代码
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_9" title="完整流程" class="md-nav__link">
     完整流程
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2156,33 +2147,27 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="开发和提交代码" class="md-nav__link">
-    开发和提交代码
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="安装环境" class="md-nav__link">
     安装环境
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="获取代码" class="md-nav__link">
     获取代码
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="编译和测试" class="md-nav__link">
     编译和测试
   </a>
@@ -2243,23 +2228,18 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_8" title="提交代码" class="md-nav__link">
     提交代码
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_9" title="完整流程" class="md-nav__link">
     完整流程
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2278,17 +2258,15 @@
               
                 
                 
-                  <h1>开发和提交代码</h1>
-                
-                <h2 id="_1">开发和提交代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">安装环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+                <h1 id="_1">开发和提交代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">安装环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>推荐在 Linux（如 Ubuntu 14.04+）或 MacOS 环境中开发代码，并安装如下工具。</p>
 <ul>
 <li>git：用来获取代码。</li>
 <li>golang 1.6+：安装成功后需要配置 $GOPATH 等环境变量。</li>
 <li>Docker 1.12+：用来支持容器环境，注意 MacOS 下要用 <a href="https://docs.docker.com/docker-for-mac">Docker for Mac</a>。</li>
 </ul>
-<h3 id="_3">获取代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">获取代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>首先注册 Linux foundation ID，并登陆 <a href="https://gerrit.hyperledger.org/">https://gerrit.hyperledger.org/</a>，添加个人 ssh pub key。</p>
 <p>查看项目列表，找到对应项目，以 fabric 为例，采用 <code>Clone with commit-msg hook</code> 的方式来获取。</p>
 <p>典型的，执行如下命令获取代码，放到 <code>$GOPATH/src/github.com/hyperledger/</code> 路径下，其中 <code>LF_ID</code> 替换为你的 Linux foundation id。</p>
@@ -2301,37 +2279,36 @@ $ git clone ssh://LF_ID@gerrit.hyperledger.org:29418/fabric <span class="o">&amp
 <div class="codehilite"><pre><span></span>git clone http://LF_ID@gerrit.hyperledger.org/r/fabric <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="nb">cd</span> fabric <span class="o">&amp;&amp;</span> curl -kLo <span class="sb">`</span>git rev-parse --git-dir<span class="sb">`</span>/hooks/commit-msg http://LF_ID@gerrit.hyperledger.org/r/tools/hooks/commit-msg<span class="p">;</span> chmod +x <span class="sb">`</span>git rev-parse --git-dir<span class="sb">`</span>/hooks/commit-msg<span class="o">)</span>
 </pre></div>
 
-<h3 id="_4">编译和测试<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">编译和测试<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>大部分编译和安装过程都可以利用 Makefile 来执行，包括如下常见操作。</p>
-<h4 id="go-tools">安装 go tools<a class="headerlink" href="#go-tools" title="Permanent link">&para;</a></h4>
-<p>执行 </p>
+<h3 id="go-tools">安装 go tools<a class="headerlink" href="#go-tools" title="Permanent link">&para;</a></h3>
+<p>执行
 <div class="codehilite"><pre><span></span>$ make gotools
-</pre></div>
-
-<h4 id="_5">语法格式检查<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+</pre></div></p>
+<h3 id="_5">语法格式检查<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>执行</p>
 <div class="codehilite"><pre><span></span>$ make linter
 </pre></div>
 
-<h4 id="peer">编译 peer<a class="headerlink" href="#peer" title="Permanent link">&para;</a></h4>
-<p>执行 </p>
+<h3 id="peer">编译 peer<a class="headerlink" href="#peer" title="Permanent link">&para;</a></h3>
+<p>执行</p>
 <div class="codehilite"><pre><span></span>$ make peer
 </pre></div>
 
 <p>会自动编译生成 Docker 镜像，并生成本地 peer 可执行文件。</p>
 <p><em>注意：有时候会因为获取安装包不稳定而报错，需要执行 <code>make clean</code>，然后再次执行。</em></p>
-<h4 id="docker">生成 Docker 镜像<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h4>
-<p>执行 </p>
+<h3 id="docker">生成 Docker 镜像<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>执行</p>
 <div class="codehilite"><pre><span></span>$ make images
 </pre></div>
 
-<h4 id="_6">执行所有的检查和测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>执行 </p>
+<h3 id="_6">执行所有的检查和测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>执行</p>
 <div class="codehilite"><pre><span></span>$ make checks
 </pre></div>
 
-<h4 id="_7">执行单元测试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p>执行 </p>
+<h3 id="_7">执行单元测试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>执行</p>
 <div class="codehilite"><pre><span></span>$ make unit-test
 </pre></div>
 
@@ -2339,13 +2316,13 @@ $ git clone ssh://LF_ID@gerrit.hyperledger.org:29418/fabric <span class="o">&amp
 <div class="codehilite"><pre><span></span>$ go <span class="nb">test</span> -v -run<span class="o">=</span>TestGetFoo
 </pre></div>
 
-<h4 id="bdd">执行 BDD 测试<a class="headerlink" href="#bdd" title="Permanent link">&para;</a></h4>
+<h3 id="bdd">执行 BDD 测试<a class="headerlink" href="#bdd" title="Permanent link">&para;</a></h3>
 <p>需先生成本地 Docker 镜像。</p>
-<p>执行 </p>
+<p>执行</p>
 <div class="codehilite"><pre><span></span>$ make behave
 </pre></div>
 
-<h3 id="_8">提交代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h2 id="_8">提交代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>仍然使用 Linux foundation ID 登录 <a href="http://jira.hyperledger.org">jira.hyperledger.org</a>，查看有没有未分配的任务，如果对某个任务感兴趣，可以添加自己为 assignee，如对 FAB-XXX 任务。</p>
 <p>本地创建新的分支 FAB-XXX。</p>
 <div class="codehilite"><pre><span></span>$ git checkout -b FAB-XXX
@@ -2375,7 +2352,7 @@ paragraphs and sentences...
 </pre></div>
 
 <p>表示这个提交是对旧提交的一次修订。</p>
-<h3 id="_9">完整流程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="_9">完整流程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>总结，完整的流程如下图所示。</p>
 <p><img alt="代码提交流程" src="../_images/patchset-lifecycle.png" /></p>
                 

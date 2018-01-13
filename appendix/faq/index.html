@@ -1970,6 +1970,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         常见问题
@@ -1983,41 +1985,30 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="常见问题" class="md-nav__link">
-    常见问题
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="通用问题" class="md-nav__link">
     通用问题
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="比特币、以太坊相关" class="md-nav__link">
     比特币、以太坊相关
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="超级账本项目" class="md-nav__link">
     超级账本项目
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2085,41 +2076,30 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="常见问题" class="md-nav__link">
-    常见问题
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="通用问题" class="md-nav__link">
     通用问题
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="比特币、以太坊相关" class="md-nav__link">
     比特币、以太坊相关
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="超级账本项目" class="md-nav__link">
     超级账本项目
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2138,10 +2118,8 @@
               
                 
                 
-                  <h1>常见问题</h1>
-                
-                <h2 id="_1">常见问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">通用问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+                <h1 id="_1">常见问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">通用问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><strong> 问：区块链是谁发明的，有什么特点？</strong></p>
 <p>答：区块链相关的思想最早是比特币的发明者-中本聪（化名）在论文中提出（但没有明确定义）作为比特币网络的核心支持技术。自那以后，区块链技术逐渐脱离比特币网络，成为一种通用的可以支持分布式记账能力的底层技术，具有去中心化和加密安全等特点。</p>
 <p><strong> 问：区块链和比特币是什么关系？</strong></p>
@@ -2162,7 +2140,7 @@
 <p>答：已知根证书文件 <root_cafile> 和待验证证书文件 <ca_to_verify> 情况下，可以使用如下命令进行验证：<code>openssl verify -CAfile &lt;root_cafile&gt; &lt;ca_to_verify&gt;</code>。</p>
 <p><strong> 问：为何 Hash 函数将任意长的文本映射到定长的摘要，很少会发生冲突？</strong></p>
 <p>答：像 SHA-1 这样的 Hash 函数可以将任意长的文本映射到相对很短的定长摘要。从理论上讲，从一个很大的集合映射到一个小的集合上必然会出现冲突。Hash 函数之所以很少出现冲突的原因在于虽然输入的数据长度可以很大，但其实人类产生的数据并非全空间的，这些数据往往是相对有序（低熵值）的，实际上也是一个相对较小的集合。当然，这个集合自身可能比输出的结果要大，但这个冲突的概率远没有输入是全空间集合时那么夸张。</p>
-<h3 id="_3">比特币、以太坊相关<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">比特币、以太坊相关<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><strong> 问：比特币区块链为何要设计为每 10 分钟才出来一个块，快一些不可以吗？</strong></p>
 <p>答：这个主要是从公平的角度，当某一个新块被计算出来后，需要在全球的比特币网络内公布。临近的矿工将最先拿到消息并开始新一轮的计算，较远的矿工则较晚得到通知。最坏情况下，可能需要数十秒的延迟。为尽量确保矿工们都处在同一起跑线上，这个时间不能太短。但太长了又会导致每个交易的“最终”确认时间过长，目前看，10 分钟左右是一个相对合适的折中。另外，也是从存储代价的角度，让拥有不太大存储的普通节点可以参与到网络的维护。</p>
 <p><strong> 问：比特币区块链每个区块大小为何是 1 MB，大一些不可以吗？</strong></p>
@@ -2170,7 +2148,7 @@
 <p>实际上，之前比特币社区也曾多次讨论过改变区块大小的提案，但都未被最终接受。</p>
 <p><strong> 问：以太坊网络跟比特币网络有何关系？ </strong></p>
 <p>答：以太坊网络所采用的区块链结构，源于比特币网络。基于同样设计原理上，以太坊提出了许多改善设计，包括支持更灵活的智能合约、支持除了 PoW 之外的更多共识机制（尚未实现）等。</p>
-<h3 id="_4">超级账本项目<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">超级账本项目<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><strong> 问：超级账本项目与传统公有区块链有何不同？</strong></p>
 <p>答：超级账本是首个面向联盟链场景的开源项目，在这种场景下，参与账本的多方存在一定的信任前提，并十分看重对接入账本各方的权限管理、审计功能、传输数据的安全可靠等特性。超级账本在考虑了商业网络的这些复杂需求后，提出了创新的架构和设计，是首个在企业应用场景中得到大规模部署和验证的开源项目。</p>
 <p><strong> 问：区块链最早是公有链形式，为何现在联盟链在很多场景下得到更多推崇？</strong></p>

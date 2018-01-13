@@ -1799,6 +1799,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         简介
@@ -1812,34 +1814,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="简介" class="md-nav__link">
-    简介
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="参考架构" class="md-nav__link">
     参考架构
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="考量指标" class="md-nav__link">
     考量指标
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2080,34 +2071,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="简介" class="md-nav__link">
-    简介
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="参考架构" class="md-nav__link">
     参考架构
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="考量指标" class="md-nav__link">
     考量指标
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2126,14 +2106,12 @@
               
                 
                 
-                  <h1>简介</h1>
-                
-                <h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>区块链即服务（Blockchain as a Service，BaaS），是部署在云计算基础设施之上，对外提供区块链网络的生命周期管理和运行时服务管理等功能的一套工具。</p>
 <p>构建一套分布式的区块链方案绝非易事，既需要硬件基础设施的投入，也需要全方位的开发和运营管理（DevOps）。BaaS 作为一套工具，可以帮助开发者快速生成必要的区块链环境，进而验证所开发的上层应用。</p>
 <p>除了区块链平台本身，一套完整的解决方案实际上还可以包括设备接入、访问控制、服务监控等管理功能。这些功能，让 BaaS 平台可以为开发者提供更强大的服务支持。</p>
 <p>从 2016 年起，业界已有一些前沿技术团队发布了 BaaS 平台，除了商业的方案如 IBM Bluemix 和微软 Azure 云之外，超级账本开源项目也发起了 Cello 项目，以提供一套实现区块链平台运营管理功能的开源框架。</p>
-<h3 id="_2">参考架构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">参考架构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>下图给出了区块链即服务功能的参考架构，自上而下分为多层结构。最上层面向应用开发者和平台管理员提供不同的操作能力；核心层负责完成包括资源编排、系统监控、数据分析和权限管理等重要功能；下层可以通过多种类型的驱动和代理组件来访问和管理多种物理资源。</p>
 <p><img alt="区块链服务参考架构" src="../_images/refarch.png" /></p>
 <p>典型地，BaaS 平台所提供的业务能力通常包括：</p>
@@ -2147,7 +2125,7 @@
 <li>为管理员提供对系统各项健康状态的实时监控；</li>
 <li>提供对平台内各项资源和应用层的数据分析和响应能力。</li>
 </ul>
-<h3 id="_3">考量指标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">考量指标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>对于 BaaS 服务提供方，搭建这样一套功能完善、性能稳定的 BaaS 平台存在诸多挑战。可以从如下几个角度进行考量设计。</p>
 <ul>
 <li>性能保障：包括区块链和应用的响应速度，监控实时性等；</li>

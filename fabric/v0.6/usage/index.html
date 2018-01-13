@@ -1496,6 +1496,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         使用 chaincode
@@ -1509,41 +1511,30 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chaincode" title="使用 chaincode" class="md-nav__link">
-    使用 chaincode
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#chaincode_1" title="部署 chaincode" class="md-nav__link">
     部署 chaincode
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_2" title="查询 chaincode" class="md-nav__link">
     查询 chaincode
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_3" title="调用 chaincode" class="md-nav__link">
     调用 chaincode
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2089,41 +2080,30 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chaincode" title="使用 chaincode" class="md-nav__link">
-    使用 chaincode
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#chaincode_1" title="部署 chaincode" class="md-nav__link">
     部署 chaincode
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_2" title="查询 chaincode" class="md-nav__link">
     查询 chaincode
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#chaincode_3" title="调用 chaincode" class="md-nav__link">
     调用 chaincode
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2142,11 +2122,9 @@
               
                 
                 
-                  <h1>使用 chaincode</h1>
-                
-                <h2 id="chaincode">使用 chaincode<a class="headerlink" href="#chaincode" title="Permanent link">&para;</a></h2>
+                <h1 id="chaincode">使用 chaincode<a class="headerlink" href="#chaincode" title="Permanent link">&para;</a></h1>
 <p>下面演示 example02 chaincode，完成两方（如 a 和 b）之间进行价值的转移。</p>
-<h3 id="chaincode_1">部署 chaincode<a class="headerlink" href="#chaincode_1" title="Permanent link">&para;</a></h3>
+<h2 id="chaincode_1">部署 chaincode<a class="headerlink" href="#chaincode_1" title="Permanent link">&para;</a></h2>
 <p>集群启动后，进入一个 VP 节点。以 pbft 模式为例，节点名称为 <code>pbft_vp0_1</code>。</p>
 <div class="codehilite"><pre><span></span>$ docker <span class="nb">exec</span> -it pbft_vp0_1 bash
 </pre></div>
@@ -2170,7 +2148,7 @@ e86c26bad76f        dev-vp1-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed9340
 cf6e762f6a2e        dev-vp0-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539   <span class="s2">&quot;/opt/gopath/bin/ee5b&quot;</span>   <span class="m">2</span> minutes ago       Up <span class="m">2</span> minutes                                                dev-vp0-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539
 </pre></div>
 
-<h3 id="chaincode_2">查询 chaincode<a class="headerlink" href="#chaincode_2" title="Permanent link">&para;</a></h3>
+<h2 id="chaincode_2">查询 chaincode<a class="headerlink" href="#chaincode_2" title="Permanent link">&para;</a></h2>
 <p>查询 a 手头的价值，为初始值 100。</p>
 <div class="codehilite"><pre><span></span>$ peer chaincode query -n <span class="si">${</span><span class="nv">CC_ID</span><span class="si">}</span> -c <span class="s1">&#39;{&quot;Function&quot;: &quot;query&quot;, &quot;Args&quot;: [&quot;a&quot;]}&#39;</span>
 <span class="m">03</span>:22:31.420 <span class="o">[</span>chaincodeCmd<span class="o">]</span> chaincodeInvokeOrQuery -&gt; INFO <span class="m">001</span> Successfully queried transaction: chaincodeSpec:&lt;type:GOLANG chaincodeID:&lt;name:<span class="s2">&quot;ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539&quot;</span> &gt; ctorMsg:&lt;args:<span class="s2">&quot;query&quot;</span> args:<span class="s2">&quot;a&quot;</span> &gt; &gt;
@@ -2178,7 +2156,7 @@ Query Result: <span class="m">100</span>
 <span class="m">03</span>:22:31.420 <span class="o">[</span>main<span class="o">]</span> main -&gt; INFO <span class="m">002</span> Exiting.....
 </pre></div>
 
-<h3 id="chaincode_3">调用 chaincode<a class="headerlink" href="#chaincode_3" title="Permanent link">&para;</a></h3>
+<h2 id="chaincode_3">调用 chaincode<a class="headerlink" href="#chaincode_3" title="Permanent link">&para;</a></h2>
 <p>a 向 b 转账 10 元。</p>
 <div class="codehilite"><pre><span></span>$ peer chaincode invoke -n <span class="si">${</span><span class="nv">CC_ID</span><span class="si">}</span> -c <span class="s1">&#39;{&quot;Function&quot;: &quot;invoke&quot;, &quot;Args&quot;: [&quot;a&quot;, &quot;b&quot;, &quot;10&quot;]}&#39;</span>
 <span class="m">03</span>:22:57.345 <span class="o">[</span>chaincodeCmd<span class="o">]</span> chaincodeInvokeOrQuery -&gt; INFO <span class="m">001</span> Successfully invoked transaction: chaincodeSpec:&lt;type:GOLANG chaincodeID:&lt;name:<span class="s2">&quot;ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539&quot;</span> &gt; ctorMsg:&lt;args:<span class="s2">&quot;invoke&quot;</span> args:<span class="s2">&quot;a&quot;</span> args:<span class="s2">&quot;b&quot;</span> args:<span class="s2">&quot;10&quot;</span> &gt; &gt; <span class="o">(</span>fc298ffb-c763-4ed0-9da2-072de2ab20b1<span class="o">)</span>

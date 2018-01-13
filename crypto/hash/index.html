@@ -911,6 +911,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         Hash 算法与摘要
@@ -924,48 +926,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hash" title="Hash 算法" class="md-nav__link">
-    Hash 算法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" title="定义" class="md-nav__link">
     定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" title="流行的算法" class="md-nav__link">
     流行的算法
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="性能" class="md-nav__link">
     性能
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="数字摘要" class="md-nav__link">
     数字摘要
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,48 +2085,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hash" title="Hash 算法" class="md-nav__link">
-    Hash 算法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" title="定义" class="md-nav__link">
     定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" title="流行的算法" class="md-nav__link">
     流行的算法
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="性能" class="md-nav__link">
     性能
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="数字摘要" class="md-nav__link">
     数字摘要
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2154,10 +2134,8 @@
               
                 
                 
-                  <h1>Hash 算法与摘要</h1>
-                
-                <h2 id="hash">Hash 算法<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h2>
-<h3 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+                <h1 id="hash">Hash 算法<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h1>
+<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Hash （哈希或散列）算法是信息技术领域非常基础也非常重要的技术。它能任意长度的二进制值（明文）映射为较短的固定长度的二进制值（Hash 值），并且不同的明文很难映射为相同的 Hash 值。</p>
 <p>例如计算一段话“hello blockchain world, this is yeasy@github”的 MD5 hash 值为 <code>89242549883a2ef85dc81b90fb606046</code>。</p>
 <div class="codehilite"><pre><span></span>$ <span class="nb">echo</span> <span class="s2">&quot;hello blockchain world, this is yeasy@github&quot;</span><span class="p">|</span>md5
@@ -2171,22 +2149,22 @@
 <ul>
 <li>正向快速：给定明文和 hash 算法，在有限时间和有限资源内能计算出 hash 值。</li>
 <li>逆向困难：给定（若干） hash 值，在有限时间内很难（基本不可能）逆推出明文。</li>
-<li>输入敏感：原始输入信息修改一点信息，产生的 hash 值看起来应该都有很大不同。 </li>
+<li>输入敏感：原始输入信息修改一点信息，产生的 hash 值看起来应该都有很大不同。</li>
 <li>冲突避免：很难找到两段内容不同的明文，使得它们的 hash 值一致（发生冲突）。</li>
 </ul>
 <p>冲突避免有时候又被称为“抗碰撞性”。如果给定一个明文前提下，无法找到碰撞的另一个明文，称为“弱抗碰撞性”；如果无法找到任意两个明文，发生碰撞，则称算法具有“强抗碰撞性”。</p>
 <p><em>很多场景下，也要求对于任意长的输入内容，输出定长的 hash 结果。</em></p>
-<h3 id="_2">流行的算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">流行的算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>目前流行的 Hash 算法包括 MD5、SHA-1 和 SHA-2。</p>
 <p>MD4（RFC 1320）是 MIT 的 Ronald L. Rivest 在 1990 年设计的，MD 是 Message Digest 的缩写。其输出为 128 位。MD4 已证明不够安全。</p>
 <p>MD5（RFC 1321）是 Rivest 于1991年对 MD4 的改进版本。它对输入仍以 512 位分组，其输出是 128 位。MD5 比 MD4 复杂，并且计算速度要慢一点，更安全一些。MD5 已被证明不具备“强抗碰撞性”。</p>
 <p>SHA （Secure Hash Algorithm）是一个 Hash 函数族，由 NIST（National Institute of Standards and Technology）于 1993 年发布第一个算法。目前知名的 SHA-1 在 1995 年面世，它的输出为长度 160 位的 hash 值，因此抗穷举性更好。SHA-1 设计时基于和 MD4 相同原理，并且模仿了该算法。SHA-1 已被证明不具备“强抗碰撞性”。</p>
 <p>为了提高安全性，NIST 还设计出了 SHA-224、SHA-256、SHA-384，和 SHA-512 算法（统称为 SHA-2），跟 SHA-1 算法原理类似。SHA-3 相关算法也已被提出。</p>
 <p>目前，一般认为 MD5 和 SHA1 已经不够安全，推荐至少使用 SHA2-256 算法。</p>
-<h3 id="_3">性能<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">性能<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>一般的，Hash 算法都是算力敏感型，意味着计算资源是瓶颈，主频越高的 CPU 进行  Hash 的速度也越快。</p>
 <p>也有一些 Hash 算法不是算力敏感的，例如 scrypt，需要大量的内存资源，节点不能通过简单的增加更多 CPU 来获得 hash 性能的提升。</p>
-<h3 id="_4">数字摘要<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">数字摘要<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>顾名思义，数字摘要是对数字内容进行 Hash 运算，获取唯一的摘要值来指代原始数字内容。</p>
 <p>数字摘要是解决确保内容没被篡改过的问题（利用 Hash 函数的抗碰撞性特点）。</p>
 <p>数字摘要是 Hash 算法最重要的一个用途。在网络上下载软件或文件时，往往同时会提供一个数字摘要值，用户下载下来原始文件可以自行进行计算，并同提供的摘要值进行比对，以确保内容没有被修改过。</p>

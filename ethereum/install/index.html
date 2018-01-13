@@ -1223,6 +1223,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         安装
@@ -1236,48 +1238,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="安装部署" class="md-nav__link">
-    安装部署
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#go" title="安装 Go 环境" class="md-nav__link">
     安装 Go 环境
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#ethereum" title="安装 ethereum" class="md-nav__link">
     安装 ethereum
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#solc" title="安装 solc 编译器" class="md-nav__link">
     安装 solc 编译器
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#solidity" title="Solidity 语言支持" class="md-nav__link">
     Solidity 语言支持
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,48 +2085,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="安装部署" class="md-nav__link">
-    安装部署
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#go" title="安装 Go 环境" class="md-nav__link">
     安装 Go 环境
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#ethereum" title="安装 ethereum" class="md-nav__link">
     安装 ethereum
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#solc" title="安装 solc 编译器" class="md-nav__link">
     安装 solc 编译器
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#solidity" title="Solidity 语言支持" class="md-nav__link">
     Solidity 语言支持
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2154,11 +2134,9 @@
               
                 
                 
-                  <h1>安装</h1>
-                
-                <h2 id="_1">安装部署<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">安装部署<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>如果你是首次接触 ethereum，推荐使用下面的步骤安装部署。</p>
-<h3 id="go">安装 Go 环境<a class="headerlink" href="#go" title="Permanent link">&para;</a></h3>
+<h2 id="go">安装 Go 环境<a class="headerlink" href="#go" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>    curl -O https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz
     tar -C /usr/local -xzf go1.5.1.linux-amd64.tar.gz
     mkdir -p ~/go<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;export GOPATH=</span><span class="nv">$HOME</span><span class="s2">/go&quot;</span> &gt;&gt; ~/.bashrc
@@ -2166,7 +2144,7 @@
     <span class="nb">source</span> ~/.bashrc
 </pre></div>
 
-<h3 id="ethereum">安装 ethereum<a class="headerlink" href="#ethereum" title="Permanent link">&para;</a></h3>
+<h2 id="ethereum">安装 ethereum<a class="headerlink" href="#ethereum" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>    sudo apt-get install software-properties-common
     sudo add-apt-repository -y ppa:ethereum/ethereum
     sudo add-apt-repository -y ppa:ethereum/ethereum-dev
@@ -2174,7 +2152,7 @@
     sudo apt-get install ethereum
 </pre></div>
 
-<h3 id="solc">安装 solc 编译器<a class="headerlink" href="#solc" title="Permanent link">&para;</a></h3>
+<h2 id="solc">安装 solc 编译器<a class="headerlink" href="#solc" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>    sudo add-apt-repository ppa:ethereum/ethereum-qt
     sudo add-apt-repository ppa:ethereum/ethereum
     sudo apt-get update
@@ -2185,7 +2163,7 @@
 <div class="codehilite"><pre><span></span>    geth account new
 </pre></div>
 
-<h3 id="solidity">Solidity 语言支持<a class="headerlink" href="#solidity" title="Permanent link">&para;</a></h3>
+<h2 id="solidity">Solidity 语言支持<a class="headerlink" href="#solidity" title="Permanent link">&para;</a></h2>
 <p><a href="https://ethereum.github.io/browser-solidity/#version=0.1.1">browser-solidity</a> 提供了在线的 Solidity 语言测试。</p>
 <p>用户也可以从 <a href="https://github.com/ethereum/webthree-umbrella/releases">这里</a> 下载到包括 Solidity 运行环境的安装包。</p>
                 

@@ -983,6 +983,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         同态加密
@@ -996,41 +998,30 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="同态加密" class="md-nav__link">
-    同态加密
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="定义" class="md-nav__link">
     定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="历史" class="md-nav__link">
     历史
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="函数加密" class="md-nav__link">
     函数加密
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2087,41 +2078,30 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="同态加密" class="md-nav__link">
-    同态加密
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="定义" class="md-nav__link">
     定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="历史" class="md-nav__link">
     历史
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="函数加密" class="md-nav__link">
     函数加密
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2140,10 +2120,8 @@
               
                 
                 
-                  <h1>同态加密</h1>
-                
-                <h2 id="_1">同态加密<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+                <h1 id="_1">同态加密<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>同态加密（Homomorphic Encryption）是一种特殊的加密方法，允许对密文进行处理得到仍然是加密的结果，即对密文直接进行处理，跟对明文进行处理再加密，得到的结果相同。从代数的角度讲，即同态性。</p>
 <p>如果定义一个运算符 $$\triangle{}$$，对加密算法 <code>E</code> 和 解密算法 <code>D</code>，满足：</p>
 <p>$$
@@ -2151,12 +2129,12 @@ E(X\triangle{}Y) = E(X)\triangle{} E(Y)
 $$
 则意味着对于该运算满足同态性。</p>
 <p>同态性在代数上包括：加法同态、乘法同态、减法同态和除法同态。同时满足加法同态和乘法同态，则意味着是 <code>代数同态</code>，即 <code>全同态</code>。同时满足四种同态性，则被称为 <code>算数同态</code>。</p>
-<h3 id="_3">历史<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">历史<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>同态加密的问题最早是由 Ron Rivest、Leonard Adleman 和 Michael L. Dertouzos 在 1978 年提出，但 <a href="https://www.cs.cmu.edu/~odonnell/hits09/gentry-homomorphic-encryption.pdf">第一个“全同态”的算法</a> 到 2009 年才被克雷格·金特里（Craig Gentry）证明。</p>
 <p>仅满足加法同态的算法包括 Paillier 和 Benaloh 算法；仅满足乘法同态的算法包括 RSA 和 ElGamal 算法。</p>
 <p>同态加密在云时代的意义十分重大。目前，从安全角度讲，用户还不敢将敏感信息直接放到第三方云上进行处理。如果有了比较实用的同态加密技术，则大家就可以放心的使用各种云服务了。</p>
 <p>遗憾的是，目前已知的同态加密技术需要消耗大量的计算时间，还远达不到实用的水平。</p>
-<h3 id="_4">函数加密<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">函数加密<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>与同态加密相关的一个问题是函数加密。</p>
 <p>同态加密保护的是数据本身，而函数加密顾名思义保护的是处理函数本身，即让第三方看不到处理过程的前提下，对数据进行处理。</p>
 <p>该问题已被证明是不存在对多个通用函数的任意多 key 的方案，目前仅能做到对某个特定函数的一个 key 的方案。</p>

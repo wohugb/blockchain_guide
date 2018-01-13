@@ -1994,6 +1994,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         ProtoBuf 与 gRPC
@@ -2007,26 +2009,20 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#protobuf-grpc" title="ProtoBuf 与 gRPC" class="md-nav__link">
-    ProtoBuf 与 gRPC
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#protobuf" title="ProtoBuf" class="md-nav__link">
     ProtoBuf
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#grpc" title="gRPC" class="md-nav__link">
     gRPC
   </a>
@@ -2045,11 +2041,6 @@
   <a href="#_2" title="生成客户端代码" class="md-nav__link">
     生成客户端代码
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2098,26 +2089,20 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#protobuf-grpc" title="ProtoBuf 与 gRPC" class="md-nav__link">
-    ProtoBuf 与 gRPC
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#protobuf" title="ProtoBuf" class="md-nav__link">
     ProtoBuf
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#grpc" title="gRPC" class="md-nav__link">
     gRPC
   </a>
@@ -2143,11 +2128,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
       
       
@@ -2164,16 +2144,14 @@
               
                 
                 
-                  <h1>ProtoBuf 与 gRPC</h1>
-                
-                <h2 id="protobuf-grpc">ProtoBuf 与 gRPC<a class="headerlink" href="#protobuf-grpc" title="Permanent link">&para;</a></h2>
+                <h1 id="protobuf-grpc">ProtoBuf 与 gRPC<a class="headerlink" href="#protobuf-grpc" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/google/protobuf">ProtoBuf</a> 是一套接口描述语言（<a href="https://en.wikipedia.org/wiki/Interface_description_language">Interface Definition Language，IDL</a>），类似 Apache 的 <a href="https://thrift.apache.org/">Thrift</a>。</p>
 <p>相关处理工具主要是 <a href="https://github.com/google/protobuf">protoc</a>，基于 C++ 语言实现。</p>
 <p>用户写好 <code>.proto</code> 描述文件，之后便可以使用 protoc 自动编译生成众多计算机语言（C++、Java、Python、C#、Golang 等）的接口代码。这些代码可以支持 gRPC，也可以不支持。</p>
 <p><a href="https://github.com/grpc/grpc">gRPC</a> 是 Google 开源的 RPC 框架和库，已支持主流计算机语言。底层通信采用 HTTP2 协议，比较适合互联网场景。gRPC 在设计上考虑了跟 ProtoBuf 的配合使用。</p>
 <p>两者分别解决不同问题，可以配合使用，也可以分开单独使用。</p>
 <p>典型的配合使用场景是，写好 <code>.proto</code> 描述文件定义 RPC 的接口，然后用 protoc（带 gRPC 插件）基于 <code>.proto</code> 模板自动生成客户端和服务端的接口代码。</p>
-<h3 id="protobuf">ProtoBuf<a class="headerlink" href="#protobuf" title="Permanent link">&para;</a></h3>
+<h2 id="protobuf">ProtoBuf<a class="headerlink" href="#protobuf" title="Permanent link">&para;</a></h2>
 <p>需要工具主要包括：</p>
 <ul>
 <li>编译工具：<a href="https://github.com/google/protobuf">protoc</a>，以及一些官方没有带的语言插件；</li>
@@ -2206,7 +2184,7 @@
 
 <p>之后，正常使用 <code>protoc --go_out=./ hello.proto</code> 来生成 hello.pb.go，会自动调用 <code>protoc-gen-go</code> 插件。</p>
 <p>ProtoBuf 提供了 <code>Marshal/Unmarshal</code> 方法来将数据结构进行序列化操作。所生成的二进制文件在存储效率上比 XML 高 3~10 倍，并且处理性能高 1~2 个数量级。</p>
-<h3 id="grpc">gRPC<a class="headerlink" href="#grpc" title="Permanent link">&para;</a></h3>
+<h2 id="grpc">gRPC<a class="headerlink" href="#grpc" title="Permanent link">&para;</a></h2>
 <p>相关工具主要包括：</p>
 <ul>
 <li>运行时库：各种不同语言有不同的<a href="https://github.com/grpc/grpc/blob/master/INSTALL.md">安装方法</a>，主流语言的包管理器都已支持。</li>
@@ -2219,7 +2197,7 @@
 </pre></div>
 
 <p>gRPC 更多原理可以参考<a href="http://www.grpc.io/docs/">官方文档：http://www.grpc.io/docs</a>。</p>
-<h4 id="_1">生成服务端代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<h3 id="_1">生成服务端代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>服务端相关代码如下，主要定义了 HelloServiceServer 接口，用户可以自行编写实现代码。</p>
 <div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">HelloServiceServer</span> <span class="kd">interface</span> <span class="p">{</span>
         <span class="nx">SayHello</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="o">*</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">HelloResponse</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
@@ -2258,7 +2236,7 @@
 </pre></div>
 
 <p>编译并启动服务端。</p>
-<h4 id="_2">生成客户端代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h3 id="_2">生成客户端代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>生成的 go 文件中客户端相关代码如下，主要和实现了 HelloServiceClient 接口。用户可以通过 gRPC 来直接调用这个接口。</p>
 <div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">HelloServiceClient</span> <span class="kd">interface</span> <span class="p">{</span>
         <span class="nx">SayHello</span><span class="p">(</span><span class="nx">ctx</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">in</span> <span class="o">*</span><span class="nx">HelloRequest</span><span class="p">,</span> <span class="nx">opts</span> <span class="o">...</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">CallOption</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">HelloResponse</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>

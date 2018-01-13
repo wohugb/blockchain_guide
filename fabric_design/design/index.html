@@ -1583,6 +1583,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         架构设计
@@ -1596,26 +1598,20 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="架构设计" class="md-nav__link">
-    架构设计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="概念术语" class="md-nav__link">
     概念术语
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="区块链服务" class="md-nav__link">
     区块链服务
   </a>
@@ -1648,8 +1644,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_7" title="链码服务" class="md-nav__link">
     链码服务
   </a>
@@ -1682,23 +1678,18 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_10" title="成员权限管理" class="md-nav__link">
     成员权限管理
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_11" title="新的架构设计" class="md-nav__link">
     新的架构设计
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2155,26 +2146,20 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="架构设计" class="md-nav__link">
-    架构设计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="概念术语" class="md-nav__link">
     概念术语
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="区块链服务" class="md-nav__link">
     区块链服务
   </a>
@@ -2207,8 +2192,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_7" title="链码服务" class="md-nav__link">
     链码服务
   </a>
@@ -2241,23 +2226,18 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_10" title="成员权限管理" class="md-nav__link">
     成员权限管理
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_11" title="新的架构设计" class="md-nav__link">
     新的架构设计
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2276,13 +2256,11 @@
               
                 
                 
-                  <h1>架构设计</h1>
-                
-                <h2 id="_1">架构设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">架构设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>整个功能架构如下图所示。</p>
 <p><img alt="" src="../_images/refarch.png" /></p>
 <p>包括三大组件：区块链服务（Blockchain）、链码服务（Chaincode）、成员权限管理（Membership）。</p>
-<h3 id="_2">概念术语<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">概念术语<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Auditability（审计性）：在一定权限和许可下，可以对链上的交易进行审计和检查。</li>
 <li>Block（区块）：代表一批得到确认的交易信息的整体，准备被共识加入到区块链中。</li>
@@ -2305,9 +2283,9 @@
 <li>Validating Peer（验证节点）：维护账本的核心节点，参与一致性维护、对交易的验证和执行。</li>
 <li>World State（世界观）：是一个键值数据库，chaincode 用它来存储交易相关的状态。</li>
 </ul>
-<h3 id="_3">区块链服务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">区块链服务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>区块链服务提供一个分布式账本平台。一般地，多个交易被打包进区块中，多个区块构成一条区块链。区块链代表的是账本状态机发生变更的历史过程。</p>
-<h4 id="_4">交易<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h3 id="_4">交易<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>交易意味着围绕着某个链码进行操作。</p>
 <p>交易可以改变世界状态。</p>
 <p>交易中包括的内容主要有：</p>
@@ -2362,7 +2340,7 @@
 <li>function-spec: function name, arguments</li>
 <li>proposal: [channel,] chaincode, <function-spec></li>
 </ul>
-<h4 id="_5">区块<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h3 id="_5">区块<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>区块打包交易，确认交易后的世界状态。</p>
 <p>一个区块中包括的内容主要有：</p>
 <ul>
@@ -2417,7 +2395,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h4 id="_6">世界观<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h3 id="_6">世界观<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>世界观用于存放链码执行过程中涉及到的状态变量，是一个键值数据库。典型的元素为 <code>[chaincodeID, ckey]: value</code> 结构。</p>
 <p>为了方便计算变更后的 hash 值，一般采用默克尔树数据结构进行存储。树的结构由两个参数（<code>numBuckets</code> 和 <code>maxGroupingAtEachLevel</code>）来进行初始配置，并由 <code>hashFunction</code> 配置决定存放键值到叶子节点的方式。显然，各个节点必须保持相同的配置，并且启动后一般不建议变动。</p>
 <ul>
@@ -2430,9 +2408,9 @@
 <p>该桶的内容则为</p>
 <p>$$ bucket = \sum_{1}^{M} G_i $$</p>
 <p><em>注：这里的 <code>+</code> 代表字符串拼接，并非数学运算。</em></p>
-<h3 id="_7">链码服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h2 id="_7">链码服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>链码包含所有的处理逻辑，并对外提供接口，外部通过调用链码接口来改变世界观。</p>
-<h4 id="_8">接口和操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h3 id="_8">接口和操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>链码需要实现 Chaincode 接口，以被 VP 节点调用。</p>
 <div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">Chaincode</span> <span class="kd">interface</span> <span class="p">{</span> <span class="nx">Init</span><span class="p">(</span><span class="nx">stub</span> <span class="o">*</span><span class="nx">ChaincodeStub</span><span class="p">,</span> <span class="nx">function</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="nx">Invoke</span><span class="p">(</span><span class="nx">stub</span> <span class="o">*</span><span class="nx">ChaincodeStub</span><span class="p">,</span> <span class="nx">function</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="nx">Query</span><span class="p">(</span><span class="nx">stub</span> <span class="o">*</span><span class="nx">ChaincodeStub</span><span class="p">,</span> <span class="nx">function</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="kt">error</span><span class="p">)}</span>
 </pre></div>
@@ -2444,17 +2422,17 @@
 <li>查询：VP 节点发送 QUERY 消息给链码沙盒的 shim 层，shim 层用传过来的参数调用链码的 Query 函数完成查询。</li>
 </ul>
 <p>不同链码之间可能互相调用和查询。</p>
-<h4 id="_9">容器<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h3 id="_9">容器<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>在实现上，链码需要运行在隔离的容器中，超级账本采用了 Docker 作为默认容器。</p>
 <p>对容器的操作支持三种方法：build、start、stop，对应的接口为 VM。</p>
-<p><div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">VM</span> <span class="kd">interface</span> <span class="p">{</span> 
-  <span class="nx">build</span><span class="p">(</span><span class="nx">ctxt</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">id</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">env</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">attachstdin</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">attachstdout</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">reader</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Reader</span><span class="p">)</span> <span class="kt">error</span> 
-  <span class="nx">start</span><span class="p">(</span><span class="nx">ctxt</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">id</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">env</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">attachstdin</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">attachstdout</span> <span class="kt">bool</span><span class="p">)</span> <span class="kt">error</span> 
-  <span class="nx">stop</span><span class="p">(</span><span class="nx">ctxt</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">id</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">timeout</span> <span class="kt">uint</span><span class="p">,</span> <span class="nx">dontkill</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">dontremove</span> <span class="kt">bool</span><span class="p">)</span> <span class="kt">error</span> 
+<p><div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">VM</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nx">build</span><span class="p">(</span><span class="nx">ctxt</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">id</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">env</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">attachstdin</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">attachstdout</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">reader</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Reader</span><span class="p">)</span> <span class="kt">error</span>
+  <span class="nx">start</span><span class="p">(</span><span class="nx">ctxt</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">id</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">env</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">attachstdin</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">attachstdout</span> <span class="kt">bool</span><span class="p">)</span> <span class="kt">error</span>
+  <span class="nx">stop</span><span class="p">(</span><span class="nx">ctxt</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">id</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">timeout</span> <span class="kt">uint</span><span class="p">,</span> <span class="nx">dontkill</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">dontremove</span> <span class="kt">bool</span><span class="p">)</span> <span class="kt">error</span>
 <span class="p">}</span>
 </pre></div>
 链码部署成功后，会创建连接到部署它的 VP 节点的 gRPC 通道，以接受后续 Invoke 或 Query 指令。</p>
-<h4 id="grpc">gRPC 消息<a class="headerlink" href="#grpc" title="Permanent link">&para;</a></h4>
+<h3 id="grpc">gRPC 消息<a class="headerlink" href="#grpc" title="Permanent link">&para;</a></h3>
 <p>VP 节点和容器之间通过 gRPC 消息来交互。消息基本结构为</p>
 <div class="codehilite"><pre><span></span><span class="kd">message</span> <span class="nc">ChaincodeMessage</span> <span class="p">{</span>
 
@@ -2466,7 +2444,7 @@
 <p>当发生链码部署时，容器启动后发送 <code>REGISTER</code> 消息到 VP 节点。如果成功，VP 节点返回 <code>REGISTERED</code> 消息，并发送 <code>INIT</code> 消息到容器，调用链码中的 Init 方法。</p>
 <p>当发生链码调用时，VP 节点发送 <code>TRANSACTION</code> 消息到容器，调用其 Invoke 方法。如果成功，容器会返回 <code>RESPONSE</code> 消息。</p>
 <p>类似的，当发生链码查询时，VP 节点发送 <code>QUERY</code> 消息到容器，调用其 Query 方法。如果成功，容器会返回 <code>RESPONSE</code> 消息。</p>
-<h3 id="_10">成员权限管理<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h2 id="_10">成员权限管理<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>通过基于 PKI 的成员权限管理，平台可以对接入的节点和客户端的能力进行限制。</p>
 <p>证书有三种，Enrollment，Transaction，以及确保安全通信的 TLS 证书。</p>
 <ul>
@@ -2475,7 +2453,7 @@
 <li>通信证书 TLSCert：控制对网络的访问，并且防止窃听。</li>
 </ul>
 <p><img alt="" src="../_images/memserv-components.png" /></p>
-<h3 id="_11">新的架构设计<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h2 id="_11">新的架构设计<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>目前，VP 节点执行了所有的操作，包括接收交易，进行交易验证，进行一致性达成，进行账本维护等。这些功能的耦合导致节点性能很难进行扩展。</p>
 <p>新的思路就是对这些功能进行解耦，让每个功能都相对单一，容易进行扩展。社区内已经有了一些讨论。</p>
 <p>Fabric 1.0 的设计采用了适当的解耦，根据功能将节点角色解耦开，让不同节点处理不同类型的工作负载。</p>

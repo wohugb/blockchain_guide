@@ -1247,6 +1247,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         协议设计
@@ -1260,48 +1262,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="协议设计" class="md-nav__link">
-    协议设计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="核心概念" class="md-nav__link">
     核心概念
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="一致性" class="md-nav__link">
     一致性
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="降低攻击" class="md-nav__link">
     降低攻击
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" title="提高扩展性" class="md-nav__link">
     提高扩展性
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,48 +2085,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="协议设计" class="md-nav__link">
-    协议设计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" title="核心概念" class="md-nav__link">
     核心概念
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" title="一致性" class="md-nav__link">
     一致性
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" title="降低攻击" class="md-nav__link">
     降低攻击
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" title="提高扩展性" class="md-nav__link">
     提高扩展性
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2154,25 +2134,23 @@
               
                 
                 
-                  <h1>协议设计</h1>
-                
-                <h2 id="_1">协议设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">核心概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+                <h1 id="_1">协议设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">核心概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>EVM：以太坊虚拟机，轻量级虚拟机环境，是以太坊中智能合约的运行环境。</li>
 <li>Account：账户，分两类：合约账户存储执行的合约代码；外部账户为以太币拥有者账户，对应到某公钥。</li>
 <li>Transaction：交易，从一个账户到另一个账户的消息，包括以太币或者合约执行参数。</li>
 <li>Gas：燃料，每执行一条合约指令会消耗一定的燃料，当某个交易还未执行结束，而燃料消耗完时，合约执行终止并回滚状态。</li>
 </ul>
-<h3 id="_3">一致性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">一致性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>目前采用了 PoW 作为一致达成保证，未来可能迁移到 PoS 上。</p>
-<h3 id="_4">降低攻击<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">降低攻击<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>设计核心思想是通过经济激励机制防止少数人作恶：</p>
 <ul>
 <li>所有交易都要提供交易费用，避免 DDoS 攻击；</li>
 <li>程序运行指令数通过 gas 来限制，所消耗的费用超过设定上限时会被取消，避免恶意合约。</li>
 </ul>
-<h3 id="_5">提高扩展性<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_5">提高扩展性<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>以太坊未来希望通过分片机制可以提高整个网络的扩展性。分片之前整个网络的处理取决于单个节点的处理。</p>
 <p>分片后，只有同一片内的处理是同步的、一致的，不同分片之间则可以是异步的。</p>
                 

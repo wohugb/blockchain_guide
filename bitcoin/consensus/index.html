@@ -1127,6 +1127,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         共识机制
@@ -1140,34 +1142,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="共识机制" class="md-nav__link">
-    共识机制
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#pow" title="PoW" class="md-nav__link">
     PoW
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#pos" title="PoS" class="md-nav__link">
     PoS
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2080,34 +2071,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="共识机制" class="md-nav__link">
-    共识机制
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#pow" title="PoW" class="md-nav__link">
     PoW
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#pos" title="PoS" class="md-nav__link">
     PoS
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2126,13 +2106,11 @@
               
                 
                 
-                  <h1>共识机制</h1>
-                
-                <h2 id="_1">共识机制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">共识机制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>比特币网络是公开的，因此共识协议的稳定性和防攻击性十分关键。</p>
 <p>比特币区块链采用了 Proof of Work（PoW）的机制来实现共识，该机制于 1998 年在 <a href="http://www.weidai.com/bmoney.txt">B-money</a> 设计中提出。</p>
 <p>目前，Proof of 系列中比较出名的一致性协议包括 PoW 和 PoS，都是通过经济惩罚来限制恶意参与。</p>
-<h3 id="pow">PoW<a class="headerlink" href="#pow" title="Permanent link">&para;</a></h3>
+<h2 id="pow">PoW<a class="headerlink" href="#pow" title="Permanent link">&para;</a></h2>
 <p>工作量证明，Proof of Work，通过计算来猜测一个数值（nonce），得以解决规定的 hash 问题（来源于 <a href="">hashcash</a>）。保证在一段时间内，系统中只能出现少数合法提案。</p>
 <p>同时，这些少量的合法提案会在网络中进行广播，收到的用户进行验证后会基于它认为的最长链上继续难题的计算。因此，系统中可能出现链的分叉（Fork），但最终会有一条链成为最长的链。</p>
 <p>hash 问题具有不可逆的特点，因此，目前除了暴力计算外，还没有有效的算法进行解决。反之，如果获得符合要求的 nonce，则说明在概率上是付出了对应的算力。谁的算力多，谁最先解决问题的概率就越大。当掌握超过全网一半算力时，从概率上就能控制网络中链的走向。这也是所谓 <code>51% 攻击</code> 的由来。</p>
@@ -2140,7 +2118,7 @@
 <p>有一个很直观的例子可以说明为何这种经济博弈模式会确保系统中最长链的唯一。</p>
 <p><img alt="PoW 保证一致性" src="../pow.png" /></p>
 <p>超市付款需要排成一队，可能有人不守规矩要插队。超市管理员会检查队伍，认为最长的一条队伍是合法的，并让不合法的分叉队伍重新排队。只要大部分人不傻，就会自觉在最长的队伍上排队。</p>
-<h3 id="pos">PoS<a class="headerlink" href="#pos" title="Permanent link">&para;</a></h3>
+<h2 id="pos">PoS<a class="headerlink" href="#pos" title="Permanent link">&para;</a></h2>
 <p>权益证明，Proof of Stake，2013 年被提出，最早在 <a href="">Peercoin</a> 系统中被实现，类似现实生活中的股东机制，拥有股份越多的人越容易获取记账权。</p>
 <p>典型的过程是通过保证金（代币、资产、名声等具备价值属性的物品即可）来对赌一个合法的块成为新的区块，收益为抵押资本的利息和交易服务费。提供证明的保证金（例如通过转账货币记录）越多，则获得记账权的概率就越大。合法记账者可以获得收益。</p>
 <p>PoS 是试图解决在 PoW 中大量资源被浪费的缺点。恶意参与者将存在保证金被罚没的风险，即损失经济利益。</p>
