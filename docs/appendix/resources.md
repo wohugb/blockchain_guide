@@ -1,6 +1,6 @@
-## 参考资源链接
+# 参考资源链接
 
-### 论文
+## 论文
 
 * L. Lamport, “Time, Clocks, and the Ordering of Events in a Distributed System,” Commun. ACM, vol. 21, no. 7, pp. 558–565, 1978.
 * M Pease, R Shostak, L Lamport. Reaching Agreement in the Presence of Faults. Journal of the ACM, 1980, 27(2): 228-234.
@@ -17,7 +17,7 @@ A. Back, M. Corallo, L. Dashjr, M. Friedenbach, G. Maxwell, A. Miller, A. Poelst
 * F. Reid and M. Harrigan, “An analysis of anonymity in the bitcoin system,” Secur. Priv. Soc. Networks, pp. 197–223, 2013.
 * K. Bhargavan, A. Delignat-Lavaud, C. Fournet, A. Gollamudi, G. Gonthier, N. Kobeissi, A. Rastogi, T. Sibut-Pinote, N. Swamy, and S. Zanella-Béguelin, “Formal Verification of Smart Contracts,” 2016.
 
-### 项目网站
+## 项目网站
 
 * 比特币项目官方网站：https://bitcoin.org/。
 * [blockchain.info](https://blockchain.info)：比特币信息统计网站。
@@ -27,10 +27,10 @@ A. Back, M. Corallo, L. Dashjr, M. Friedenbach, G. Maxwell, A. Miller, A. Poelst
 * 超级账本项目官方网站：[https://hyperledger.org](https://hyperledger.org);
 * 超级账本 Docker 镜像：[https://hub.docker.com/r/hyperledger/](https://hub.docker.com/r/hyperledger/)。
 
-### 培训课程
+## 培训课程
 
 * [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/course/bitcointech), Princeton University。
 
-### 区块链即服务
+## 区块链即服务
 * [IBM Bluemix BaaS](https://console.ng.bluemix.net/catalog/services/blockchain/)： https://console.ng.bluemix.net/catalog/services/blockchain/。
 * [微软 Azure BaaS](https://azure.microsoft.com/en-us/solutions/blockchain)：https://azure.microsoft.com/en-us/solutions/blockchain。

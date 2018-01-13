@@ -1,4 +1,4 @@
-﻿## 使用超级账本 Cello 搭建区块链服务
+﻿# 使用超级账本 Cello 搭建区块链服务
 
 从前面的讲解中可以看到，区块链服务平台能够有效加速对区块链技术的应用，解决企业和开发者进行手动运营管理的负担。但是这些方案都是商业用途，并且只能在线使用。
 
@@ -8,7 +8,7 @@
 
 正如 Cello 的名字所蕴意，它就像一把精巧的大提琴，以区块链为琴弦，可以奏出更加动人的乐章。
 
-### 基本架构和特性
+## 基本架构和特性
 
 Cello 项目由笔者领导的 IBM 技术团队于 2017 年 1 月贡献到超级账本社区，主要基于 Python 和 Javascript 语言编写。该项目的定位为区块链管理平台，支持部署、运行时管理和数据分析等功能，可以实现一套完整的 BaaS 系统的快速搭建。其基本架构如下图所示。
 
@@ -24,7 +24,7 @@ Cello 项目由笔者领导的 IBM 技术团队于 2017 年 1 月贡献到超级
 
 下面具体介绍如何以 Docker 主机为资源池，用 Cello 快速搭建一个区块链服务平台。
 
-### 环境准备
+## 环境准备
 
 Cello 采用了典型的主从（Master-Worker）架构。用户可以自行准备一个 Master 物理节点和若干个 Worker 节点。
 
@@ -36,7 +36,7 @@ Cello 采用了典型的主从（Master-Worker）架构。用户可以自行准�
 
 为了支持区块链网络，Worker 和 Master 节点需要配备足够的物理资源。例如，如果希望在一个 Worker 节点上能够启动至少 10 个区块链集群，则建议节点配置至少为 8 CPU、16G 内存、100G 硬盘容量。
 
-### 下载 Cello 源码
+## 下载 Cello 源码
 
 Cello 代码的官方仓库在社区的 gerrit 上，并实时同步到 Github 仓库中，读者可以从任一仓库中获取代码。例如通过如下命令从官方仓库下载 Cello 源码。
 
@@ -45,9 +45,9 @@ $ git clone http://gerrit.hyperledger.org/r/cello && cd cello
 ```
 
 
-### 配置 Worker 节点
+## 配置 Worker 节点
 
-#### 安装和配置 Docker 服务
+### 安装和配置 Docker 服务
 
 首先安装 Docker，推荐使用 1.12 或者更新的版本。可通过如下命令快速安装 Docker。
 
@@ -72,7 +72,7 @@ $ sudo systemctl restart docker.service
 ```
 
 
-#### 下载 Docker 镜像
+### 下载 Docker 镜像
 
 对于超级账本 Fabric v1.0 集群所需的镜像，可以使用如下命令进行自动下载。
 
@@ -80,7 +80,7 @@ $ sudo systemctl restart docker.service
 $ cd scripts/worker_node_setup && bash download_images.sh
 ```
 
-#### 防火墙配置
+### 防火墙配置
 
 为了确保 Worker 上的容器可以正常访问，通过如下命令确保主机开启 IP 转发。
 
@@ -90,9 +90,9 @@ $ sysctl -w net.ipv4.ip_forward=1
 
 同时检查主机的 iptables 设置，确保必要的端口被打开（如 2375、7050~10000 等）。
 
-### 配置 Master 节点
+## 配置 Master 节点
 
-#### 下载 Docker 镜像
+### 下载 Docker 镜像
 
 使用如下命令下载运行服务所必要的 Docker 镜像。
 
@@ -105,7 +105,7 @@ $ docker pull python:3.5 \
 	&& docker pull mongo-express:0.30
 ```
 
-#### 安装 Cello 服务
+### 安装 Cello 服务
 
 首次运行时，可以通过如下命令对 Master 节点进行快速配置，包括安装 Docker 环境、创建本地数据库目录、安装依赖软件包等。
 
@@ -115,7 +115,7 @@ $ make setup
 
 如果安装过程没有提示出现问题，则说明当前环境满足了运行条件。如果出现问题，可通过查看日志信息进行定位。
 
-#### 管理 Cello 服务
+### 管理 Cello 服务
 
 可以通过运行如下命令来快速启动 Cello 相关的组件服务（包括 dashboard、restserver、watchdog、mongo、nginx 等）。
 
@@ -143,7 +143,7 @@ $ make logs
 $ make log service=watchdog
 ```
 
-### 使用 Cello 管理区块链
+## 使用 Cello 管理区块链
 
 Cello 服务启动后，管理员可以通过 Cello 的 Dashboard 页面管理区块链。
 
@@ -162,7 +162,7 @@ Cello 服务启动后，管理员可以通过 Cello 的 Dashboard 页面管理�
 | Inused Chains |  管理正在被用户占用的链 |
 | Released History  | 查看链的释放历史 |
 
-#### Hosts 页面
+### Hosts 页面
 
 在 Hosts 页面，管理员可以管理所有资源池中已存在的主机，或添加新主机。表格中会显示主机的类型、状态、正在运行的区块链数量、区块链数量上限等。所有设定为 non-schedulable (不会自动分配给用户）的主机会用灰色背景标识，如下图所示。
 
@@ -180,7 +180,7 @@ Cello 服务启动后，管理员可以通过 Cello 的 Dashboard 页面管理�
 
 ![添加主机](_images/cello_dashboard_addhost.png)
 
-#### Active Chains 页面
+### Active Chains 页面
 
 Active Chains 页面会显示所有正在运行的链，包括链的名称、类型、状态、健康状况、规模、所属主机等信息。正在被用户占用的链会用灰色背景标识，如下图所示。
 
@@ -198,7 +198,7 @@ Active Chains 页面会显示所有正在运行的链，包括链的名称、类
 
 ![添加链](_images/cello_dashboard_addcluster.png)
 
-### 基于 Cello 进行功能扩展
+## 基于 Cello 进行功能扩展
 Cello 已经提供了完整的区块链管理功能，并提供了图形界面和 API。
 
 用户可以通过向 Cello 的 Master 节点（默认为 80 端口）发送 RESTful API 来申请、释放区块链，或查看区块链相关信息，如其对外开放的接口，可供用户进行远程交互。RESTful API 的说明可在 Cello 的文档中查阅。

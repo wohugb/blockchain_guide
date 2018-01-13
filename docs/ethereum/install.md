@@ -1,8 +1,8 @@
-## 安装部署
+# 安装部署
 
 如果你是首次接触 ethereum，推荐使用下面的步骤安装部署。
 
-### 安装 Go 环境
+## 安装 Go 环境
 ```sh
     curl -O https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz
     tar -C /usr/local -xzf go1.5.1.linux-amd64.tar.gz
@@ -11,7 +11,7 @@
     source ~/.bashrc
 ```
 
-### 安装 ethereum
+## 安装 ethereum
 ```sh
     sudo apt-get install software-properties-common
     sudo add-apt-repository -y ppa:ethereum/ethereum
@@ -20,7 +20,7 @@
     sudo apt-get install ethereum
 ```
 
-### 安装 solc 编译器
+## 安装 solc 编译器
 
 ```sh
     sudo add-apt-repository ppa:ethereum/ethereum-qt
@@ -28,14 +28,14 @@
     sudo apt-get update
     sudo apt-get install cpp-ethereum
 ```
-    
+
 安装后可以使用 geth 命令创建 ethereum 账户
 
 ```sh
     geth account new
 ```
 
-### Solidity 语言支持
+## Solidity 语言支持
 
 [browser-solidity](https://ethereum.github.io/browser-solidity/#version=0.1.1) 提供了在线的 Solidity 语言测试。
 

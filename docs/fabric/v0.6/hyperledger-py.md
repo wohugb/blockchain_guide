@@ -1,9 +1,10 @@
-## Python 客户端
+# Python 客户端
+
 前面应用案例，都是直接通过 HTTP API 来跟 hyperledger 进行交互，操作比较麻烦。
 
 还可以直接通过 [hyperledger-py](https://github.com/yeasy/hyperledger-py) 客户端来进行更方便的操作。
 
-### 安装
+## 安装
 
 ```sh
 $ pip install hyperledger --upgrade
@@ -18,7 +19,7 @@ $ pip install -r requirements.txt
 $ python setup.py install
 ```
 
-### 使用
+## 使用
 
 ```py
 >>> from hyperledger.client import Client
@@ -29,7 +30,7 @@ $ python setup.py install
 
 更多使用方法，可以参考 [API 文档](https://github.com/yeasy/hyperledger-py/blob/master/docs/api.md)。
 
-### 其它客户端
+## 其它客户端
 
 目前，HyperLedger Fabric 已经成立了 [SDK 工作组](https://wiki.hyperledger.org/groups/fabric-sdk/fabric-sdk-wg)。
 

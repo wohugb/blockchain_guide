@@ -1,7 +1,6 @@
-## 其它问题
+# 其它问题
 
-
-### 零知识证明（zero knowledge validation）
+## 零知识证明（zero knowledge validation）
 
 证明者在不向验证者提供任何有用的信息的前提下，使验证者相信某个论断是正确的。
 

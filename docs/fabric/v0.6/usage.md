@@ -1,8 +1,8 @@
-## 使用 chaincode
+# 使用 chaincode
 
 下面演示 example02 chaincode，完成两方（如 a 和 b）之间进行价值的转移。
 
-### 部署 chaincode
+## 部署 chaincode
 
 集群启动后，进入一个 VP 节点。以 pbft 模式为例，节点名称为 `pbft_vp0_1`。
 
@@ -35,7 +35,7 @@ e86c26bad76f        dev-vp1-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed9340
 cf6e762f6a2e        dev-vp0-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539   "/opt/gopath/bin/ee5b"   2 minutes ago       Up 2 minutes                                                dev-vp0-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539
 ```
 
-### 查询 chaincode
+## 查询 chaincode
 
 查询 a 手头的价值，为初始值 100。
 
@@ -46,7 +46,7 @@ Query Result: 100
 03:22:31.420 [main] main -> INFO 002 Exiting.....
 ```
 
-### 调用 chaincode
+## 调用 chaincode
 
 a 向 b 转账 10 元。
 

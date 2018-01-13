@@ -1,6 +1,6 @@
-## 开发和提交代码
+# 开发和提交代码
 
-### 安装环境
+## 安装环境
 
 推荐在 Linux（如 Ubuntu 14.04+）或 MacOS 环境中开发代码，并安装如下工具。
 
@@ -8,7 +8,7 @@
 * golang 1.6+：安装成功后需要配置 $GOPATH 等环境变量。
 * Docker 1.12+：用来支持容器环境，注意 MacOS 下要用 [Docker for Mac](https://docs.docker.com/docker-for-mac)。
 
-### 获取代码
+## 获取代码
 
 首先注册 Linux foundation ID，并登陆 [https://gerrit.hyperledger.org/](https://gerrit.hyperledger.org/)，添加个人 ssh pub key。
 
@@ -28,18 +28,18 @@ $ git clone ssh://LF_ID@gerrit.hyperledger.org:29418/fabric && scp -p -P 29418 L
 git clone http://LF_ID@gerrit.hyperledger.org/r/fabric && (cd fabric && curl -kLo `git rev-parse --git-dir`/hooks/commit-msg http://LF_ID@gerrit.hyperledger.org/r/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
 ```
 
-### 编译和测试
+## 编译和测试
 
 大部分编译和安装过程都可以利用 Makefile 来执行，包括如下常见操作。
 
-#### 安装 go tools
-执行 
+### 安装 go tools
 
+执行
 ```sh
 $ make gotools
 ```
 
-#### 语法格式检查
+### 语法格式检查
 
 执行
 
@@ -47,9 +47,9 @@ $ make gotools
 $ make linter
 ```
 
-#### 编译 peer
+### 编译 peer
 
-执行 
+执行
 
 ```sh
 $ make peer
@@ -59,23 +59,25 @@ $ make peer
 
 *注意：有时候会因为获取安装包不稳定而报错，需要执行 `make clean`，然后再次执行。*
 
-#### 生成 Docker 镜像
-执行 
+### 生成 Docker 镜像
+
+执行
 
 ```sh
 $ make images
 ```
 
-#### 执行所有的检查和测试
-执行 
+### 执行所有的检查和测试
+
+执行
 
 ```sh
 $ make checks
 ```
 
-#### 执行单元测试
+### 执行单元测试
 
-执行 
+执行
 
 ```sh
 $ make unit-test
@@ -87,16 +89,17 @@ $ make unit-test
 $ go test -v -run=TestGetFoo
 ```
 
-#### 执行 BDD 测试
+### 执行 BDD 测试
+
 需先生成本地 Docker 镜像。
 
-执行 
+执行
 
 ```sh
 $ make behave
 ```
 
-### 提交代码
+## 提交代码
 
 仍然使用 Linux foundation ID 登录 [jira.hyperledger.org](http://jira.hyperledger.org)，查看有没有未分配的任务，如果对某个任务感兴趣，可以添加自己为 assignee，如对 FAB-XXX 任务。
 
@@ -141,7 +144,7 @@ $ git commit -a --amend
 
 表示这个提交是对旧提交的一次修订。
 
-### 完整流程
+## 完整流程
 
 总结，完整的流程如下图所示。
 

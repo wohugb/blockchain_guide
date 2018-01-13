@@ -1,4 +1,4 @@
-## 消息协议
+# 消息协议
 
 节点之间通过消息来进行交互，所有消息都由下面的数据结构来实现。
 
@@ -40,7 +40,7 @@ message Message {
 
 不同消息类型，对应到 payload 中数据不同，分为对应的子类消息结构。
 
-### Discovery
+## Discovery
 
 包括 DISC_HELLO、DISC_GET_PEERS、DISC_PEERS。
 
@@ -58,7 +58,7 @@ message PeerID { string name = 1;}
 
 之后，定期发送 `DISC_GET_PEERS` 消息，获取新加入的节点信息。收到 `DISC_GET_PEERS` 消息的节点会通过 `DISC_PEERS` 消息返回自己知道的节点列表。
 
-### Transaction
+## Transaction
 
 包括 Deploy、Invoke、Query。消息结构如下：
 
@@ -74,14 +74,14 @@ message TransactionPayload { bytes payload = 1;}
 enum ConfidentialityLevel { PUBLIC = 0; CONFIDENTIAL = 1;}
 ```
 
-### Synchronization
+## Synchronization
 当节点发现自己 block 落后网络中最新状态，则可以通过发送如下消息（由 consensus 策略决定）来获取对应的返回。
 
 * SYNC_GET_BLOCKS（对应 SYNC_BLOCKS）：获取给定范围内的 block 数据；
 * SYNC_STATE_GET_SNAPSHOT（对应 SYNC_STATE_SNAPSHOT）：获取最新的世界观快照；
 * SYNC_STATE_GET_DELTAS（对应 SYNC_STATE_DELTAS）：获取某个给定范围内的 block 对应的状态变更。
 
-### Consensus
+## Consensus
 
 consensus 组件收到 `CHAIN_TRANSACTION` 类消息后，将其转换为 `CONENSUS` 消息，然后向所有的 VP 节点广播。
 

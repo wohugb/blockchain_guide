@@ -1,4 +1,5 @@
-## ACID 原则
+# ACID 原则
+
 即 Atomicity（原子性）、Consistency（一致性）、Isolation（隔离性）、Durability（持久性）。
 
 ACID 原则描述了对分布式数据库的一致性需求，同时付出了可用性的代价。

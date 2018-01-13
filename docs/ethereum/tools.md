@@ -1,7 +1,7 @@
-## 相关工具
+# 相关工具
 
+## 客户端
 
-### 客户端
 官方提供钱包客户端 Mist，支持进行交易，同时支持直接编写和部署智能合约。
 
 所编写的代码编译发布后，可以部署到区块链上。使用者可通过发送调用相应合约方法的交易，由矿工的以太坊虚拟机（EVM）在区块链上执行。
@@ -16,8 +16,8 @@
 * [pyethapp](https://github.com/ethereum/pyethapp)：python 语言实现；
 * [ruby-ethereum](https://github.com/janx/ruby-ethereum)：Ruby 语言实现；
 
-### IDE
+## IDE
 
-### 网站资源
+## 网站资源
 
 已有一些网站提供对以太坊网络的数据查看，包括 EthStats.net、EtherNodes.com 等。

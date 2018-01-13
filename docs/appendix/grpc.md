@@ -1,4 +1,4 @@
-## ProtoBuf 与 gRPC
+# ProtoBuf 与 gRPC
 [ProtoBuf](https://github.com/google/protobuf) 是一套接口描述语言（[Interface Definition Language，IDL](https://en.wikipedia.org/wiki/Interface_description_language)），类似 Apache 的 [Thrift](https://thrift.apache.org/)。
 
 相关处理工具主要是 [protoc](https://github.com/google/protobuf)，基于 C++ 语言实现。
@@ -11,7 +11,7 @@
 
 典型的配合使用场景是，写好 `.proto` 描述文件定义 RPC 的接口，然后用 protoc（带 gRPC 插件）基于 `.proto` 模板自动生成客户端和服务端的接口代码。
 
-### ProtoBuf
+## ProtoBuf
 
 需要工具主要包括：
 
@@ -54,7 +54,7 @@ $ go get -u github.com/golang/protobuf/{protoc-gen-go,proto} // 前者是 plugin
 
 ProtoBuf 提供了 `Marshal/Unmarshal` 方法来将数据结构进行序列化操作。所生成的二进制文件在存储效率上比 XML 高 3~10 倍，并且处理性能高 1~2 个数量级。
 
-### gRPC
+## gRPC
 
 相关工具主要包括：
 
@@ -74,7 +74,7 @@ $ protoc --go_out=plugins=grpc:. hello.proto
 gRPC 更多原理可以参考[官方文档：http://www.grpc.io/docs](http://www.grpc.io/docs/)。
 
 
-#### 生成服务端代码
+### 生成服务端代码
 
 服务端相关代码如下，主要定义了 HelloServiceServer 接口，用户可以自行编写实现代码。
 
@@ -121,7 +121,7 @@ func main() {
 编译并启动服务端。
 
 
-#### 生成客户端代码
+### 生成客户端代码
 
 生成的 go 文件中客户端相关代码如下，主要和实现了 HelloServiceClient 接口。用户可以通过 gRPC 来直接调用这个接口。
 

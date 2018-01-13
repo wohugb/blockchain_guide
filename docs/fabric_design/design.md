@@ -1,4 +1,4 @@
-## 架构设计
+# 架构设计
 
 整个功能架构如下图所示。
 
@@ -6,7 +6,7 @@
 
 包括三大组件：区块链服务（Blockchain）、链码服务（Chaincode）、成员权限管理（Membership）。
 
-### 概念术语
+## 概念术语
 
 * Auditability（审计性）：在一定权限和许可下，可以对链上的交易进行审计和检查。
 * Block（区块）：代表一批得到确认的交易信息的整体，准备被共识加入到区块链中。
@@ -29,11 +29,11 @@
 * Validating Peer（验证节点）：维护账本的核心节点，参与一致性维护、对交易的验证和执行。
 * World State（世界观）：是一个键值数据库，chaincode 用它来存储交易相关的状态。
 
-### 区块链服务
+## 区块链服务
 
 区块链服务提供一个分布式账本平台。一般地，多个交易被打包进区块中，多个区块构成一条区块链。区块链代表的是账本状态机发生变更的历史过程。
 
-#### 交易
+### 交易
 
 交易意味着围绕着某个链码进行操作。
 
@@ -94,7 +94,7 @@ message Transaction {
 * function-spec: function name, arguments
 * proposal: [channel,] chaincode, <function-spec>
 
-#### 区块
+### 区块
 
 区块打包交易，确认交易后的世界状态。
 
@@ -156,7 +156,7 @@ message Block {
 }
 ```
 
-#### 世界观
+### 世界观
 世界观用于存放链码执行过程中涉及到的状态变量，是一个键值数据库。典型的元素为 `[chaincodeID, ckey]: value` 结构。
 
 为了方便计算变更后的 hash 值，一般采用默克尔树数据结构进行存储。树的结构由两个参数（`numBuckets` 和 `maxGroupingAtEachLevel`）来进行初始配置，并由 `hashFunction` 配置决定存放键值到叶子节点的方式。显然，各个节点必须保持相同的配置，并且启动后一般不建议变动。
@@ -176,11 +176,11 @@ $$ bucket = \sum_{1}^{M} G_i $$
 
 *注：这里的 `+` 代表字符串拼接，并非数学运算。*
 
-### 链码服务
+## 链码服务
 
 链码包含所有的处理逻辑，并对外提供接口，外部通过调用链码接口来改变世界观。
 
-#### 接口和操作
+### 接口和操作
 链码需要实现 Chaincode 接口，以被 VP 节点调用。
 
 ```go
@@ -195,23 +195,23 @@ type Chaincode interface { Init(stub *ChaincodeStub, function string, args []str
 
 不同链码之间可能互相调用和查询。
 
-#### 容器
+### 容器
 
 在实现上，链码需要运行在隔离的容器中，超级账本采用了 Docker 作为默认容器。
 
 对容器的操作支持三种方法：build、start、stop，对应的接口为 VM。
 
 ```go
-type VM interface { 
-  build(ctxt context.Context, id string, args []string, env []string, attachstdin bool, attachstdout bool, reader io.Reader) error 
-  start(ctxt context.Context, id string, args []string, env []string, attachstdin bool, attachstdout bool) error 
-  stop(ctxt context.Context, id string, timeout uint, dontkill bool, dontremove bool) error 
+type VM interface {
+  build(ctxt context.Context, id string, args []string, env []string, attachstdin bool, attachstdout bool, reader io.Reader) error
+  start(ctxt context.Context, id string, args []string, env []string, attachstdin bool, attachstdout bool) error
+  stop(ctxt context.Context, id string, timeout uint, dontkill bool, dontremove bool) error
 }
 ```
 链码部署成功后，会创建连接到部署它的 VP 节点的 gRPC 通道，以接受后续 Invoke 或 Query 指令。
 
 
-#### gRPC 消息
+### gRPC 消息
 VP 节点和容器之间通过 gRPC 消息来交互。消息基本结构为
 
 ```protobuf
@@ -228,7 +228,7 @@ message ChaincodeMessage {
 
 类似的，当发生链码查询时，VP 节点发送 `QUERY` 消息到容器，调用其 Query 方法。如果成功，容器会返回 `RESPONSE` 消息。
 
-### 成员权限管理
+## 成员权限管理
 
 通过基于 PKI 的成员权限管理，平台可以对接入的节点和客户端的能力进行限制。
 
@@ -240,7 +240,7 @@ message ChaincodeMessage {
 
 ![](_images/memserv-components.png)
 
-### 新的架构设计
+## 新的架构设计
 目前，VP 节点执行了所有的操作，包括接收交易，进行交易验证，进行一致性达成，进行账本维护等。这些功能的耦合导致节点性能很难进行扩展。
 
 新的思路就是对这些功能进行解耦，让每个功能都相对单一，容易进行扩展。社区内已经有了一些讨论。

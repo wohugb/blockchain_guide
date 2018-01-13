@@ -1,11 +1,11 @@
-## 简介
+# 简介
 比特币是基于密码学和经济博弈的一种数字货币，也是历史上首个经过大规模长时间运作检验的数字货币系统。
 
 从 [blockchain.info 网站](https://blockchain.info/charts/market-price?timespan=all) 可以从查询到比特币的汇率（以美元为单位）变化历史。
 
 ![比特币汇率历史](blockchain_price.png)
 
-### 历史
+## 历史
 
 2008 年 10 月 31 日，中本聪发布比特币唯一的白皮书：《Bitcoin：A Peer-to-Peer Electronic Cash System/比特币：一种点对点的电子现金系统》。
 
@@ -51,7 +51,7 @@
 
 *注：通过 [blockchain.info](https://blockchain.info) 可以实时查询到更多详细数据。*
 
-### 山寨币
+## 山寨币
 比特币的“成功”，刺激了相关的生态和社区发展，大量类似数字货币（超过 700 种）纷纷出现，被称为“山寨币”，比较出名的包括以太币和瑞波（Ripple）币。
 
 

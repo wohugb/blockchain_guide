@@ -1,5 +1,7 @@
-### 物流供应链简单案例
-#### 功能描述
+# 物流供应链简单案例
+
+## 功能描述
+
 该 [智能合约](chaincode_example06.go) 实现了一个简单的供应链应用案例，针对物流行业的应用场景。由于将合约的协议公开，并且签收快递时需要签名，可以在很大程度上保证不被冒领，实现了一手交钱，一手交货，同时提高了效率，确保了透明。
 
 该智能合约中三种角色如下：
@@ -28,7 +30,8 @@
 
 账户私钥应该由安装在本地的客户端生成，本例中为了简便，使用模拟私钥和公钥。每位用户的私钥为guid+“1”，公钥为guid+“2”。用户签名为私钥+“1”
 
-#### 数据结构设计
+## 数据结构设计
+
 - 寄货单
     - 寄货单编号
     - 寄货方地址
@@ -39,7 +42,7 @@
     - 物流费用支付类型  //0：寄货方支付 1：收货方支付
     - 寄货方预支付费用  //模拟实际预支付，寄货方支付物流费下值为物流费，否则为0
     - 快递配送信息    // 快递运送状态，所经过快递分拨中心与快递点的数组
-    - 收货方签名 
+    - 收货方签名
 
 - 寄货方
     - 姓名
@@ -72,7 +75,8 @@
     - 快递点私钥
     - 快递点账户地址
 
-#### function及各自实现的功能
+## function及各自实现的功能
+
 - `init`  初始化物流公司及其下相应快递点
 - `invoke`   调用合约内部的函数
 - `query`   查询相关的信息
@@ -82,25 +86,26 @@
 - `createExpressOrder` 寄货方创建寄货单  init
 - `finishExpressOrder` 收货方签收寄货单 invoke
 - `addExpressPointer` 物流公司添加新的快递点  invoke
-- `updateExpressOrder` 更新物流公司订单,添加快递点的信息 invoke  
+- `updateExpressOrder` 更新物流公司订单,添加快递点的信息 invoke
 
 
 - `getExpressOrderById` 查询订单状态  query
 - `getExpress`  获取物流公司信息      query
 - `getUserByAddress` 获取用户信息   query
-- `getExpressPointByAddress`  获取快递点信息  query   
+- `getExpressPointByAddress`  获取快递点信息  query
 
 - `writeExpress` 存储物流公司信息 （以物流公司账户地址进行存储）
 - `writeExpressOrder` 存储寄货单  （以“express”+id 进行存储）
 - `writeUser` 存储用户信息   （以地址进行存储）
 - `writeExpressPoint` 存储物流点信息  （以快递点账户地址进行存储）
 
-#### 接口设计
+## 接口设计
+
  `createUser`
 
 request参数
 ```
-args[0] 姓名 
+args[0] 姓名
 args[1] 所在地址
 args[2] 联系方式
 args[3] 账户余额
@@ -111,7 +116,7 @@ response参数
 user信息的json表示
 ```
 
- `createExpressPointer` 
+ `createExpressPointer`
 
 request参数
 ```
@@ -241,4 +246,4 @@ response参数
 快递点的json信息表示
 ```
 
-#### 测试
+## 测试

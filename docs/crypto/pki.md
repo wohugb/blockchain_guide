@@ -1,4 +1,4 @@
-## PKI 体系
+# PKI 体系
 
 在非对称加密中，公钥则可以通过证书机制来进行保护，如何管理和分发证书则可以通过 PKI（Public Key Infrastructure）来保障。
 

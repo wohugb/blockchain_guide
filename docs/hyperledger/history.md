@@ -1,6 +1,6 @@
-## 简介
+# 简介
 
-### 历史
+## 历史
 区块链已经成为当下最受人关注的开源技术，有人说它将颠覆金融行业的未来。然而对很多人来说，区块链技术难以理解和实现，而且缺乏统一的规范。
 
 2015 年 12 月，开源世界的旗舰——[Linux 基金](http://www.linuxfoundation.org) 会牵头，联合 30 家初始企业成员（包括 IBM、Accenture、Intel、J.P.Morgan、R3、DAH、DTCC、FUJITSU、HITACHI、SWIFT、Cisco 等），共同 [宣告](https://www.hyperledger.org/news/announcement/2016/02/hyperledger-project-announces-30-founding-members) 了 [Hyperledger](https://www.hyperledger.org) 项目的成立。该项目试图打造一个透明、公开、去中心化的分布式账本项目，作为区块链技术的开源规范和标准，让更多的应用能更容易的建立在区块链技术之上。项目官方信息网站在 [hyperledger.org](https://www.hyperledger.org)，
@@ -17,7 +17,7 @@ Hyperledger 社区由技术委员会（Technical Steering Committee，TSC）指�
 
 该项目的出现，实际上宣布区块链技术已经不再是仅面向“社会实验”性质的应用场景，它已经正式被主流机构和企业市场认可；同时，Hyperledger 首次提出和实现的完备权限管理、创新的一致性算法和可拔插、可扩展的框架，对于区块链相关技术和产业的发展都将产生深远的影响。
 
-### 主要项目
+## 主要项目
 代码托管在 [Gerrit](https://gerrit.hyperledger.org) 和 [Github](https://github.com/hyperledger/)（自动从 gerrit 上同步）上。
 
 ![Hyperledger](_images/hyperledger.png)
@@ -37,7 +37,7 @@ Hyperledger 社区由技术委员会（Technical Steering Committee，TSC）指�
 
 目前，所有项目均处于孵化（Incubation）状态。
 
-### 项目原则
+## 项目原则
 项目约定共同遵守的 [基本原则](https://github.com/hyperledger/hyperledger) 为：
 
 * 重视模块化设计，包括交易、合同、一致性、身份、存储等技术场景；

@@ -1,8 +1,6 @@
-## Merkle 树
+# Merkle 树
 
 ![Merkle 树示例](_images/Merkle_tree.png)
-
-
 
 [默克尔树](https://en.wikipedia.org/wiki/Merkle_tree)（又叫哈希树）是一种二叉树，由一个根节点、一组中间节点和一组叶节点组成。最下面的叶节点包含存储数据或其哈希值，每个中间节点是它的两个孩子节点内容的哈希值，根节点也是由它的两个子节点内容的哈希值组成。
 

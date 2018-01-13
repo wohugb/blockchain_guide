@@ -1,8 +1,8 @@
-## 权限管理
+# 权限管理
 
 权限管理机制是 hyperledger fabric 项目的一大特色。下面给出使用权限管理的一个应用案例。
 
-### 启动集群
+## 启动集群
 
 首先下载相关镜像。
 
@@ -21,7 +21,7 @@ $ cd docker-compose-files/hyperledger/0.6/pbft
 $ docker-compose -f 4-peers-with-membersrvc.yml up
 ```
 
-### 用户登陆
+## 用户登陆
 
 当启用了权限管理后，首先需要登录，例如以内置账户 jim 账户登录。
 
@@ -62,7 +62,7 @@ Response：
 }
 ```
 
-### chaincode 部署
+## chaincode 部署
 
 登录之后，chaincode 的部署、调用等操作与之前类似，只是需要通过 -u 选项来指定用户名。
 
@@ -132,7 +132,7 @@ Response：
 }
 ```
 
-### chaincode 调用
+## chaincode 调用
 
 在账户 a、b 之间进行转账 10 元的操作。
 
@@ -183,7 +183,7 @@ Response：
 }
 ```
 
-### chaincode 查询
+## chaincode 查询
 
 查询 a 账户的余额。
 
@@ -235,7 +235,7 @@ Response：
 }
 ```
 
-### 区块信息查询
+## 区块信息查询
 
 URL：
 

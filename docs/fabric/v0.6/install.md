@@ -1,4 +1,4 @@
-## Fabric v0.6 安装部署
+# Fabric v0.6 安装部署
 
 如果是初次接触 Hyperledger Fabric 项目，推荐采用如下的步骤，基于 Docker-Compose 的一键部署。
 
@@ -6,7 +6,7 @@
 
 *动手前，建议适当了解一些 [Docker 相关知识](https://github.com/yeasy/docker_practice)。*
 
-### 安装 Docker
+## 安装 Docker
 
 Docker 支持 Linux 常见的发行版，如 Redhat/Centos/Ubuntu 等。
 
@@ -34,7 +34,7 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker.service
 ```
 
-### 安装 docker-compose
+## 安装 docker-compose
 
 首先，安装 python-pip 软件包。
 
@@ -48,7 +48,7 @@ $ sudo aptitude install python-pip
 $ sudo pip install docker-compose>=1.7.0
 ```
 
-### 下载镜像
+## 下载镜像
 
 目前 1.0 代码还没有正式发布，推荐使用 v0.6 分支代码进行测试。
 
@@ -77,7 +77,7 @@ $ docker pull hyperledger/fabric-peer:x86_64-0.6.1-preview \
 
 之后，用户可以选择采用不同的一致性机制，包括 noops、pbft 两类。
 
-### 使用 noops 模式
+## 使用 noops 模式
 noops 默认没有采用 consensus 机制，1 个节点即可，可以用来进行快速测试。
 
 ```sh
@@ -93,7 +93,7 @@ $ docker run --name=vp0 \
     hyperledger/fabric-peer:latest peer node start
 ```
 
-### 使用 PBFT 模式
+## 使用 PBFT 模式
 
 PBFT 是经典的分布式一致性算法，也是 hyperledger 目前最推荐的算法，该算法至少需要 4 个节点。
 
@@ -116,7 +116,7 @@ $ git clone https://github.com/yeasy/docker-compose-files
 $ docker-compose -f 4-peers.yml up
 ```
 
-### 多物理节点部署
+## 多物理节点部署
 
 上述方案的典型场景是单物理节点上部署多个 Peer 节点。如果要扩展到多物理节点，需要容器云平台的支持，如 Swarm 等。
 
@@ -126,7 +126,7 @@ $ docker-compose -f 4-peers.yml up
 
 4 台物理机分别命名为 vp0 ~ vp3。
 
-#### vp0
+### vp0
 
 vp0 作为初始的探测节点。
 
@@ -147,7 +147,7 @@ $ docker run --name=vp0 \
     hyperledger/fabric-peer:latest peer node start
 ```
 
-#### vp1 ~ vp3
+### vp1 ~ vp3
 
 以 vp1 为例，假如 vp0 的地址为 10.0.0.1。
 
@@ -171,7 +171,7 @@ $ docker run --name=${NAME} \
     hyperledger/fabric-peer:latest peer node start
 ```
 
-### 服务端口
+## 服务端口
 Hyperledger 默认监听的服务端口包括：
 
 * 7050: REST 服务端口，推荐 NVP 节点开放，0.6 之前版本中为 5000；
